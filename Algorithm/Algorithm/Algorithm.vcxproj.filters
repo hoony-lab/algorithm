@@ -18,5 +18,11 @@
     <ClCompile Include="header.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="하샤드 수.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="다리를 지나는 트럭.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
