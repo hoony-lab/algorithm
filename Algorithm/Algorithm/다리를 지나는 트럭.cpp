@@ -12,6 +12,12 @@ int solution(int bridge_length, int weight, vector<int> truck_weights) {
 	// 무게, 위치
 	queue<pair<int, int> > q;   
 
+	//for (int truck = 0; truck < truck_weights.size(); truck++)
+	//{
+	//	int tru = truck_weights[truck];
+	//}
+
+
 	// 하나 넣고 시작
 	q.push({ truck_weights[ind], ind });
 	total_weight += truck_weights[ind];
