@@ -13,93 +13,126 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\solved">
+      <UniqueIdentifier>{e35a05f6-69c5-4407-af52-2e13c49e1625}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\coding_test">
+      <UniqueIdentifier>{cea93589-d6de-491f-98eb-40fdd08c0f98}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="header.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="하샤드 수.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="다리를 지나는 트럭.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="해시_위장.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="스택큐_쇠막대기.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="스택큐_주식가격.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="짝지어 제거하기.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="행렬의 곱.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="멀리뛰기.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="JadenCase문자열 만들기.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="컴퓨터 네트워크 갯수.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="스케쥴링.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="길 찾기 게임.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="탐색_네트워크.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="플밍5.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="플밍3.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="플밍1.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="플밍2.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="플밍6.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="boj 1516 게임개발.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="EST codility 1.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="EST codility 2.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="EST codility 3.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="lev4 행렬곱 최소.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="lev3 skill check test .cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="lev3 순위_권투선수.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="lev3.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="practice.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="boj 3078 좋은 친구.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 1516 게임개발.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 2583 영역 구하기.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="행렬의 곱.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="멀리뛰기.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="스케쥴링.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="스택큐_쇠막대기.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="스택큐_주식가격.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="짝지어 제거하기.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="컴퓨터 네트워크 갯수.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="탐색_네트워크.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="하샤드 수.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="해시_위장.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="lev4 행렬곱 최소.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="JadenCase문자열 만들기.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="lev3 skill check test .cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="lev3 순위_권투선수.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="lev3.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="다리를 지나는 트럭.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="길 찾기 게임.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="header.h">
+      <Filter>헤더 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 1991 트리순회.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="현대모비스 2.cpp">
+      <Filter>소스 파일\coding_test</Filter>
+    </ClCompile>
+    <ClCompile Include="현대모비스 3.cpp">
+      <Filter>소스 파일\coding_test</Filter>
+    </ClCompile>
+    <ClCompile Include="플밍6.cpp">
+      <Filter>소스 파일\coding_test</Filter>
+    </ClCompile>
+    <ClCompile Include="플밍1.cpp">
+      <Filter>소스 파일\coding_test</Filter>
+    </ClCompile>
+    <ClCompile Include="플밍2.cpp">
+      <Filter>소스 파일\coding_test</Filter>
+    </ClCompile>
+    <ClCompile Include="플밍3.cpp">
+      <Filter>소스 파일\coding_test</Filter>
+    </ClCompile>
+    <ClCompile Include="플밍5.cpp">
+      <Filter>소스 파일\coding_test</Filter>
+    </ClCompile>
+    <ClCompile Include="EST codility 1.cpp">
+      <Filter>소스 파일\coding_test</Filter>
+    </ClCompile>
+    <ClCompile Include="EST codility 2.cpp">
+      <Filter>소스 파일\coding_test</Filter>
+    </ClCompile>
+    <ClCompile Include="EST codility 3.cpp">
+      <Filter>소스 파일\coding_test</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 17144 미세먼지 안녕.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 11657 타임머신.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 16236 아기상어.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 15654 N과 M 5.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="test.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
