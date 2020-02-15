@@ -19,6 +19,9 @@
     <Filter Include="소스 파일\coding_test">
       <UniqueIdentifier>{cea93589-d6de-491f-98eb-40fdd08c0f98}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\coding_test\COS Pro Prep 3">
+      <UniqueIdentifier>{847f781f-beef-42f4-9765-8a9bea04a3ac}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="practice.cpp">
@@ -134,6 +137,9 @@
     </ClCompile>
     <ClCompile Include="test.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 2529 부등호.cpp">
+      <Filter>소스 파일\solved</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
