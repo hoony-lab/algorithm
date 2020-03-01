@@ -171,6 +171,9 @@
     <ClCompile Include="solved\행렬의 곱.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
+    <ClCompile Include="boj 2630 색종이 만들기.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="practice\abocadoTest.h">
