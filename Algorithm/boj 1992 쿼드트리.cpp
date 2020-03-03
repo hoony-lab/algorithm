@@ -34,6 +34,7 @@ void div_conq(int xx, int yy, int len) {
 
 	if (flag) {
 		answer.append(to_string(map[xx][yy]));
+		cout << map[xx][yy] << ", ??\n";
 	}
 	else {
 
@@ -56,10 +57,11 @@ int main() {
 	cin >> n;
 	for (int x = 0; x < n; x++)
 	{
-		for (int y = 0; y < n; y++)
-		{
-			cin >> map[x][y];
-		}
+		string tmp;
+		cin >> tmp;
+
+		for(int y = 0 ; y < n ; y++)
+			map[x][y] = tmp[y] - '0';
 	}
 
 	div_conq(0, 0, n);
