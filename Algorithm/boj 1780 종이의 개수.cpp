@@ -32,6 +32,14 @@ void div_conq(int xx, int yy, int len) {
 		div_conq(xx + div_len * 2, yy + div_len, div_len);
 		div_conq(xx + div_len * 2, yy + div_len * 2, div_len);
 	}
+	/*
+			else {
+
+			for(int i=0; i<3; i++)
+				for(int j=0; j<3; j++)
+					div_conq(xx+i*div_len, yy+j*div_len, div_len);
+				}
+	*/
 
 }
 

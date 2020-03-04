@@ -180,6 +180,9 @@
     <ClCompile Include="boj 1780 종이의 개수.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="boj 1629 곱셈.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="practice\abocadoTest.h">
@@ -211,9 +214,6 @@
     </ClInclude>
     <ClInclude Include="practice\SDSintermediate.h">
       <Filter>소스 파일\practice</Filter>
-    </ClInclude>
-    <ClInclude Include="boj 1992 쿼드트리.h">
-      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
