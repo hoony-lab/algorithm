@@ -17,7 +17,7 @@ int main() {
 		v.push_back(s);
 	}
 
-	sort(v.begin(), v.end(), [](string v1, string v2) {
+	sort(v.begin(), v.end(), [](const string v1, const string v2) {
 		if (v1.length() == v2.length())
 			return v1 < v2;
 		else return v1.length() < v2.length();
@@ -25,9 +25,13 @@ int main() {
 
 	//consider overlapping -> unique / other data structure
 
-	unique(v.begin(), v.end());
-	
-	FOR(i, n) std::cout << v[i] << '\n';
+	vector<string>::iterator iter, end_iter;
+
+	end_iter = unique(v.begin(), v.end());
+
+	for (iter = v.begin(); iter != end_iter; iter++) {
+		std::cout << *iter << '\n';
+	}
 
 	return 0;
 }
