@@ -189,13 +189,37 @@
     <ClCompile Include="boj 5543 상근날드.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
-    <ClCompile Include="boj 10809 알파벳 찾기.cpp">
+    <ClCompile Include="boj 1546 평균.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 2562 최댓값.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 2908 상수.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 11720 숫자의 합.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 11654 아스키코드.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 2475 검증수.cpp">
+      <Filter>소스 파일\solved</Filter>
     </ClCompile>
     <ClCompile Include="boj 1157 단어 공부.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 10809 알파벳 찾기.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 2675 문자열 반복.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 1181 단어 정렬.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="boj 1546 평균.cpp">
+    <ClCompile Include="boj 2751 수 정렬하기 2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
