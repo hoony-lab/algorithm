@@ -228,6 +228,9 @@
     <ClCompile Include="boj 1620 포켓몬 마스터 이다솜.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
+    <ClCompile Include="boj 14500 테트로미노.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="practice\abocadoTest.h">
