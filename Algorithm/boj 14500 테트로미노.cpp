@@ -2,8 +2,8 @@
 
 using namespace std;
 
-int dy[] = {};
-int dx[] = {  };
+int dy[] = { 0,1,0,-1 };
+int dx[] = { 1,0,-1,0 };
 
 int main() {
 	/*
