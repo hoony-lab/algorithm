@@ -262,6 +262,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="boj 7568 덩치.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 1978 소수 찾기.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
