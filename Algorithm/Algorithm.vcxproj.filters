@@ -246,10 +246,13 @@
     <ClCompile Include="13460 구슬 탈출 2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="boj 1085 직사각형에서 탈출.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="boj 10866 덱.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 1085 직사각형에서 탈출.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 11650 좌표 정렬하기.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
