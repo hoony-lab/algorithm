@@ -249,6 +249,9 @@
     <ClCompile Include="boj 1085 직사각형에서 탈출.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="boj 10866 덱.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="practice\abocadoTest.h">
@@ -281,5 +284,8 @@
     <ClInclude Include="practice\SDSintermediate.h">
       <Filter>소스 파일\practice</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>
