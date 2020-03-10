@@ -174,9 +174,6 @@
     <ClCompile Include="boj 2630 색종이 만들기.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
-    <ClCompile Include="boj 11401 이항 계수 3.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="boj 1780 종이의 개수.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
@@ -215,9 +212,6 @@
     </ClCompile>
     <ClCompile Include="boj 2675 문자열 반복.cpp">
       <Filter>소스 파일\solved</Filter>
-    </ClCompile>
-    <ClCompile Include="boj 2751 수 정렬하기 2.cpp">
-      <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="boj 1181 단어 정렬.cpp">
       <Filter>소스 파일\solved</Filter>
@@ -274,9 +268,18 @@
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
     <ClCompile Include="boj 11050 이항 계수 1.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\solved</Filter>
     </ClCompile>
     <ClCompile Include="boj 11051 이항 계수 2.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 11401 이항 계수 3.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 2751 수 정렬하기 2.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 2798 블랙잭.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
