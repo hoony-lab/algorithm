@@ -271,6 +271,12 @@
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
     <ClCompile Include="boj 10828 스택.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 11050 이항 계수 1.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 11051 이항 계수 2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
