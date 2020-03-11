@@ -280,6 +280,9 @@
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
     <ClCompile Include="boj 2798 블랙잭.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 11866 요세푸스 문제 0.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
