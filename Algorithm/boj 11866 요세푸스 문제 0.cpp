@@ -5,7 +5,7 @@
 
 void print(std::vector<int> v, int n) {
 	std::cout << "<";
-	for (int i = 0 ; i < n - 1; ++i )std::cout << v[i] << ", ";
+	for (int i = 0; i < n - 1; ++i)std::cout << v[i] << ", ";
 	std::cout << v[n - 1] << ">";
 }
 
@@ -18,7 +18,7 @@ int main() {
 	for (int i = 1; i <= n; ++i) v.push_back(i);
 
 	while (v.size()) {
-		ind += k-1;
+		ind += k - 1;
 		ind %= v.size();
 
 		ans.push_back(v[ind]);

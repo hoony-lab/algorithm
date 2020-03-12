@@ -276,9 +276,6 @@
     <ClCompile Include="boj 2798 블랙잭.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
-    <ClCompile Include="boj 11866 요세푸스 문제 0.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="boj 10989 수 정렬하기 3.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
@@ -302,6 +299,15 @@
     </ClCompile>
     <ClCompile Include="boj 10816 숫자 카드 2.cpp">
       <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 11866 요세푸스 문제 0.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 4153 직각삼각형.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 5430 AC.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
