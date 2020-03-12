@@ -289,6 +289,9 @@
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
     <ClCompile Include="boj 10845 큐.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 1018 체스판 다시 칠하기.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
