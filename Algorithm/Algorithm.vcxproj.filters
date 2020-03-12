@@ -298,6 +298,9 @@
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
     <ClCompile Include="boj 10250 ACM 호텔.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 10816 숫자 카드 2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
