@@ -243,12 +243,6 @@
     <ClCompile Include="boj 1085 직사각형에서 탈출.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
-    <ClCompile Include="boj 11650 좌표 정렬하기.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="boj 11651 좌표 정렬하기 2.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="boj 7568 덩치.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
@@ -295,6 +289,15 @@
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
     <ClCompile Include="boj 2609 최대공약수와 최소공배수.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 11650 좌표 정렬하기.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 11651 좌표 정렬하기 2.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 10250 ACM 호텔.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
