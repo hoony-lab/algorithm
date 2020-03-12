@@ -286,6 +286,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="boj 10989 수 정렬하기 3.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 10845 큐.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
