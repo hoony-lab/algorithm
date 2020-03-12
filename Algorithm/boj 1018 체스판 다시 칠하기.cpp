@@ -5,13 +5,12 @@ int dy[] = { 1,0,-1,0 };
 int main() {
 
 	char map[51][51], map2[51][51];
-
 	int n, m, min_ans = 1e9;
 	std::cin >> n >> m;
 
 	for (int x = 0; x < n; x++)
 		for (int y = 0; y < m; y++)
-			std::cin >> map[x][y], map2[x][y] = map[x][y];
+			std::cin >> map[x][y];
 
 	for (int i = 8; i <= n; i++) {
 		for (int j = 8; j <= m; j++) {
