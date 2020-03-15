@@ -316,7 +316,7 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="boj 10773 제로.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\solved</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
