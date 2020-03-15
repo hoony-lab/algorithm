@@ -310,6 +310,12 @@
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
     <ClCompile Include="boj 1929 소수 구하기.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 1966 프린터 큐.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 10773 제로.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
