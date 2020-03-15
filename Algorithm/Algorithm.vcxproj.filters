@@ -331,6 +331,12 @@
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
     <ClCompile Include="boj 4949 균형잡힌 세상.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 2869 달팽이는 올라가고 싶다.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 7569 토마토.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
