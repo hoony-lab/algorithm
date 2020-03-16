@@ -339,6 +339,9 @@
     <ClCompile Include="boj 7569 토마토.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="boj 2805 나무 자르기.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="practice\abocadoTest.h">
