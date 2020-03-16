@@ -3,80 +3,109 @@
 #include <tuple>
 #define FOR(i,n,m) for(int i = m ; i < n ; ++i)
 
+//m은 상자 가로칸, n은 상자 세로칸
+int m, n, h, time;
 int dx[] = { 0,1,0,-1,0,0 };
 int dy[] = { 1,0,-1,0,0,0 };
 int dl[] = { 0,0,0,0,1,-1 };
 int map[101][101][101], visited[101][101][101];
 
+void print(int check[101][101][101]) {
+	std::cout << "\ntime " << time << '\n';
+	FOR(l, h, 0) {
+		FOR(x, n, 0) {
+			FOR(y, m, 0) {
+				std::cout << check[l][x][y] << " ";
+			}std::cout << '\n';
+		}std::cout << '\n';
+	}
+}
+
 int main() {
-	//m은 상자 가로칸, n은 상자 세로칸
-	int m, n, h;
 	std::cin >> m >> n >> h;
 
 	FOR(l, h, 0)	FOR(x, n, 0) FOR(y, m, 0)	std::cin >> map[l][x][y];
 
+	std::queue<std::tuple<int, int, int>> q;
+
 	bool is_tomato = false, is_all_mature_tomato = true;
-	int time = 0;
-	while (1) {
 
-		//완료 검사
-		FOR(l, h, 0) {
-			FOR(x, n, 0) {
-				FOR(y, m, 0) {
-					if (map[l][x][y] == 0) {
-						is_all_mature_tomato = false; break;
-					}
-					if (is_all_mature_tomato && map[h - 1][x - 1][y - 1] != 0) {
-						if (!time) std::cout << 0;
-						else std::cout << time;
-						return 0;
-					}
-				}
-				if (!is_all_mature_tomato) break;
-			}
-			if (!is_all_mature_tomato) break;
-		}
+	print(map);
 
+	FOR(l, h, 0)	FOR(x, n, 0)	FOR(y, m, 0) {
+		if (map[l][x][y] != 1 || visited[l][x][y]) continue;
+		q.push(std::make_tuple(l, x, y));
+		visited[l][x][y] = time;
+		//std::cout << l << ", " << x << ", " << y << '\n';
+	}
 
-		std::cout << "lets go\n";
-		//순회	
+	while (!q.empty()) {
 		time++;
-		FOR(l, h, 0)	FOR(x, n, 0)	FOR(y, m, 0) {
-			if (map[l][x][y] != 1) continue;
-			std::queue<std::tuple<int, int, int>> q;
-			q.push(std::make_tuple(l, x, y));
-			visited[l][x][y] = 1;
-			std::cout << l << ", " << x << ", " << y << '\n';
 
-			while (!q.empty()) {
-				int tl = std::get<0>(q.front());
-				int tx = std::get<1>(q.front());
-				int ty = std::get<2>(q.front());
-				q.pop();
+		int qsize = q.size();
+		FOR(a, qsize, 0) {
+			int tl = std::get<0>(q.front());
+			int tx = std::get<1>(q.front());
+			int ty = std::get<2>(q.front());
+			q.pop();
 
-				FOR(i, 6, 0) {
-					int nl = tl + dl[i];
-					int nx = tx + dx[i];
-					int ny = ty + dy[i];
+			FOR(i, 6, 0) {
+				int nl = tl + dl[i];
+				int nx = tx + dx[i];
+				int ny = ty + dy[i];
 
-					if (nl < 0 || nx < 0 || ny < 0 || nl >= h || nx >= x || ny >= y) continue;
-					if (map[nl][nx][ny] == -1 || visited[nl][nx][ny]) continue;
-					
-					std::cout << nl << ", " << nx << ", " << ny << '\n';
-					q.push(std::make_tuple(nl, nx, ny));
-					visited[nl][nx][ny] = 1;
-					map[nl][nx][ny] = 1;
-					is_tomato = true;
-				}
+				if (nl < 0 || nx < 0 || ny < 0 || nl >= h || nx >= n || ny >= m) continue;
+				if (map[nl][nx][ny] == -1 || visited[nl][nx][ny]) continue;
+
+				//std::cout << nl << ", " << nx << ", " << ny << '\n';
+				q.push(std::make_tuple(nl, nx, ny));
+				visited[nl][nx][ny] = time;
+				map[nl][nx][ny] = 1;
+				is_tomato = true;
 			}
-		}
-		if (!is_tomato) {
-			std::cout << -1; return 0;
 		}
 	}
 
-}
+	if (!is_tomato) {
+		std::cout << -1;
 
+		return 0;
+	}
+
+	//완료 검사
+	FOR(l, h, 0) {
+		FOR(x, n, 0) {
+			FOR(y, m, 0) {
+				if (map[l][x][y] == 0) {
+					is_all_mature_tomato = false;
+					std::cout << -1;
+					return 0; break;
+				}
+
+				if (is_all_mature_tomato && (l == h - 1 && x == n - 1 && y == m - 1)) {
+					//if (!time) std::cout << 0;
+					//else 
+					std::cout << time;
+
+					return 0;
+				}
+			}
+			if (!is_all_mature_tomato) break;
+		}
+		if (!is_all_mature_tomato) break;
+	}
+
+
+}
+/*
+5 3 2
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+0 0 1 0 0
+0 0 0 0 0
+*/
 
 
 
