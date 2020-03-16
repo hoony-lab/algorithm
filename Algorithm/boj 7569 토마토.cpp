@@ -23,25 +23,20 @@ void print(int check[101][101][101]) {
 
 int main() {
 	std::cin >> m >> n >> h;
-
-	FOR(l, h, 0)	FOR(x, n, 0) FOR(y, m, 0)	std::cin >> map[l][x][y];
+	FOR(l, h, 0)	FOR(x, n, 0)	FOR(y, m, 0)	std::cin >> map[l][x][y];
 
 	std::queue<std::tuple<int, int, int>> q;
 
-	bool is_tomato = false, is_all_mature_tomato = true;
-
-	print(map);
-
 	FOR(l, h, 0)	FOR(x, n, 0)	FOR(y, m, 0) {
-		if (map[l][x][y] != 1 || visited[l][x][y]) continue;
+		if (map[l][x][y] != 1) continue;
 		q.push(std::make_tuple(l, x, y));
-		visited[l][x][y] = time;
-		//std::cout << l << ", " << x << ", " << y << '\n';
 	}
 
+	bool is_tomato = false;
 	while (!q.empty()) {
 		time++;
 
+		is_tomato = false;
 		int qsize = q.size();
 		FOR(a, qsize, 0) {
 			int tl = std::get<0>(q.front());
@@ -55,49 +50,39 @@ int main() {
 				int ny = ty + dy[i];
 
 				if (nl < 0 || nx < 0 || ny < 0 || nl >= h || nx >= n || ny >= m) continue;
-				if (map[nl][nx][ny] == -1 || visited[nl][nx][ny]) continue;
+				if (map[nl][nx][ny] != 0) continue;
 
-				//std::cout << nl << ", " << nx << ", " << ny << '\n';
 				q.push(std::make_tuple(nl, nx, ny));
-				visited[nl][nx][ny] = time;
 				map[nl][nx][ny] = 1;
 				is_tomato = true;
 			}
 		}
+		//print(map);
 	}
 
-	if (!is_tomato) {
-		std::cout << -1;
-
-		return 0;
-	}
 
 	//완료 검사
 	FOR(l, h, 0) {
 		FOR(x, n, 0) {
 			FOR(y, m, 0) {
 				if (map[l][x][y] == 0) {
-					is_all_mature_tomato = false;
-					std::cout << -1;
-					return 0; break;
+					std::cout << -1;	return 0;
 				}
-
-				if (is_all_mature_tomato && (l == h - 1 && x == n - 1 && y == m - 1)) {
-					//if (!time) std::cout << 0;
-					//else 
-					std::cout << time;
-
-					return 0;
+				if (l == h - 1 && x == n - 1 && y == m - 1) {
+					std::cout << time - 1;	return 0;
 				}
 			}
-			if (!is_all_mature_tomato) break;
 		}
-		if (!is_all_mature_tomato) break;
 	}
 
-
+	return 0;
 }
 /*
+5 3 1
+0 -1 0 0 0
+-1 -1 0 1 1
+0 0 0 1 1
+
 5 3 2
 0 0 0 0 0
 0 0 0 0 0
@@ -105,85 +90,12 @@ int main() {
 0 0 0 0 0
 0 0 1 0 0
 0 0 0 0 0
+
+4 3 2
+1 1 1 1
+1 1 1 1
+1 1 1 1
+1 1 1 1
+-1 -1 -1 -1
+1 1 1 -12
 */
-
-
-
-//int row, col, box[101][101] = { 2, }, go = 1, ans = 0;
-//vector<pair<int, int>> stack;
-//cin >> row >> col;
-//for (int i = 1; i <= col; i++) {
-//	for (int j = 1; j <= row; j++) {
-//		cin >> box[i][j];
-//	}
-//}
-//
-//for (int i = 1; i <= col; i++) {
-//	for (int j = 1; j <= row; j++) {
-//
-//		if (box[i][j] == 1) {
-//			stack.push_back(make_pair(i, j));
-//			ans++;
-//			cout << i << ", " << j << '\t' << endl;
-//			while (!stack.empty())
-//			{
-//
-//				i = stack.at(stack.size() - 1).first;
-//				j = stack.at(stack.size() - 1).second;
-//
-//				stack.pop_back();
-//
-//
-//				if (i > 1) {
-//					if (box[i - 1][j] == 0) {
-//						box[i - 1][j] = 1;
-//						stack.push_back(make_pair(i - 1, j));
-//						go = 1;
-//						cout << i - 1 << ", " << j << '\t';
-//					}
-//				}
-//				if (i + 1 <= col) {
-//					if (box[i + 1][j] == 0) {
-//						box[i + 1][j] = 1;
-//						stack.push_back(make_pair(i + 1, j));
-//						go = 1;
-//						cout << i + 1 << ", " << j << '\t';
-//					}
-//				}
-//				if (j + 1 <= row) {
-//					if (box[i][j + 1] == 0) {
-//						box[i][j + 1] = 1;
-//						stack.push_back(make_pair(i, j + 1));
-//						go = 1;
-//						cout << i << ", " << j + 1 << '\t';
-//					}
-//				}
-//				if (j > 1) {
-//					if (box[i][j - 1] == 0) {
-//						box[i][j - 1] = 1;
-//						stack.push_back(make_pair(i, j - 1));
-//						go = 1;
-//						cout << i << ", " << j - 1 << '\t';
-//					}
-//				}
-//				cout << "next stack" << endl;
-//			}
-//		}
-//	}
-//}
-//
-//cout << endl;
-//for (int i = 1; i <= col; i++) {
-//	for (int j = 1; j <= row; j++) {
-//		cout << box[i][j];
-//	}
-//	cout << endl;
-//}
-//cout << endl;
-//for (int i = 1; i <= col; i++) {
-//	for (int j = 1; j <= row; j++) {
-//		if (box[i][j] == 0)
-//			ans = -1;
-//	}
-//}
-//cout << ans;
