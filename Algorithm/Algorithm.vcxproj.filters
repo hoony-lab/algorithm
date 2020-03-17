@@ -352,6 +352,9 @@
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
     <ClCompile Include="boj 17219 비밀번호 찾기.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 16953 A to B.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
