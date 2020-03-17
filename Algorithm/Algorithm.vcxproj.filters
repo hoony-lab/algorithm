@@ -346,6 +346,9 @@
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
     <ClCompile Include="boj 9935 문자열폭발.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 9461 파도반 수열.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
