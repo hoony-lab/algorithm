@@ -357,10 +357,13 @@
     <ClCompile Include="boj 16953 A to B.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="boj 2638 치즈.cpp">
+    <ClCompile Include="소스.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="소스.cpp">
+    <ClCompile Include="boj 2638 치즈.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 7662 이중 우선순위 큐.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
