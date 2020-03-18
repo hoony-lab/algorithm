@@ -62,7 +62,7 @@ int main() {
 			if (map[x][y] == 'R') rx = x, ry = y;
 			if (map[x][y] == 'B') bx = x, by = y;
 		}
-	}¤·
+	}
 
 	queue<tuple<int, int, int>> rq;
 	queue<pair<int, int>> bq;
