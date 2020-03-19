@@ -1,23 +1,35 @@
 #include <iostream>
 #include <vector>
+#include <string>
 int main() {
 
 	int n, m, ans = 0;
 	std::string s;
 	std::cin >> n >> m >> s;
 
-	for (int i = 0; i < m; ++i) {
+	int ind = 0;
+	while (ind <= m) {
+
 		int count = 0;
-		if (s[i] == 'I') {
+		if (s[ind] == 'I') {
+			//std::cout << "check : I : " << ind << '\n';
+			++ind;
+
 			bool is_IO = true;
 			while (is_IO) {
-				
-				if (s.substr(i + 1, 2) == "OI") {
-					i += 2;
+
+				if (s.substr(ind, 2) == "OI") {
+					ind += 2;
+					count++;
+					//std::cout << "ind : " << ind << '\n';
 				}
+				else is_IO = false;
 
 			}
+			if (count >= n) ans += count - n + 1;
 		}
+		else ind++;
+
 	}
 	std::cout << ans;
 
