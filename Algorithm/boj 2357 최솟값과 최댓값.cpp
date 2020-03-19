@@ -19,18 +19,22 @@ int main() {
 
 	}
 	
-	for (int i = 0; i < m; ++i) {
-		long long start, end;
-		std::cin >> start >> end;
-		////TLE
-		//std::set<long long> s;
-		//
-		//for (int j = start - 1; j < end; ++j) 
-		//	s.insert(num[j]);
+	//// O(logMN) ////TLE
+	//for (int i = 0; i < m; ++i) {
+	//	long long start, end;
+	//	std::cin >> start >> end;
+	//	
+	//	//std::set<long long> s;
+	//	//
+	//	//for (int j = start - 1; j < end; ++j) 
+	//	//	s.insert(num[j]);
 
-		//std::cout << *s.begin() << " " << *(--s.end()) << '\n';
+	//	//std::cout << *s.begin() << " " << *(--s.end()) << '\n';
 
-	}
+	//}
 		
+	//// have to use segment tree O(MlogN)
+
+
 	return 0;
 }
