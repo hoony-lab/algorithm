@@ -24,7 +24,6 @@ int main() {
 
 	if (n < m) std::cout << n << '\n' << (firstm / n) * (firstn);
 	else std::cout << m << '\n' << (firstm) * (firstn / m);
-
 }
 /*
 20 8	20-8*2 = 4
