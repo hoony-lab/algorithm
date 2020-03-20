@@ -18,12 +18,9 @@ int main() {
 	for (int i = 0; i < n; ++i) sum += num[i];
 	std::cout << floor(((float)sum / n) + 0.5) << '\n';
 
-
-
 	//Áß¾Ó°ª
 	std::sort(num, num + n);
 	std::cout << num[n / 2] << '\n';
-
 
 	//ÃÖºó°ª
 	int same_cnt = 0, next_same_cnt = 0, cnt_same_cnt = 0;
@@ -56,6 +53,4 @@ int main() {
 
 	//¹üÀ§
 	std::cout << num[n - 1] - num[0] << '\n';
-
-
 }
