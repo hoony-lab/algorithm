@@ -373,6 +373,9 @@
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
     <ClCompile Include="boj 1918 후위 표기식.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 9095 1,2,3 더하기.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
