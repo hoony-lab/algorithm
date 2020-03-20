@@ -21,7 +21,7 @@ int main() {
 
 	cin >> N >> M;
 	vector<pair<int, int>> v[MAX_EDGE];
-	
+
 	int from, to, time;
 	for (int i = 0; i < M; i++) {
 		cin >> from >> to >> time;
@@ -30,24 +30,21 @@ int main() {
 
 	int min_time[501];
 	for (int i = 1; i < N; i++)	min_time[i] = 1e9;
-	
-	//벨만포드란다
 
+	//벨만포드란다
 
 	for (int i = 0; i < N; i++)
 	{
 		for (int j = 0; j < N; j++)
 		{
-
 			for (int k = 0; k < v[j].size(); k++)
 			{
 				int new_time = v[j] + v[j][k].second;
 				int past_time = v[];
 
 				if () return;
-				v[[]] = new_time;
+				v [[]] = new_time;
 			}
-
 		}
 	}
 }
