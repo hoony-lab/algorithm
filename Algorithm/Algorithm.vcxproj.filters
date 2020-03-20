@@ -312,9 +312,6 @@
     <ClCompile Include="boj 1966 프린터 큐.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
-    <ClCompile Include="boj 1436 영화감독 숌.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="boj 2108 통계학.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -371,6 +368,12 @@
     </ClCompile>
     <ClCompile Include="boj 11720 숫자의 합.cpp">
       <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 1436 영화감독 숌.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 1918 후위 표기식.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
