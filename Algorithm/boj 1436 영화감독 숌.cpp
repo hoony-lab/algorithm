@@ -1,7 +1,6 @@
 #include <iostream>
 
 int main() {
-
 	int n, cnt = 0, ans = 665, tmp_ans, isTripleSix;
 	std::cin >> n;
 	while (n != cnt) {
@@ -16,5 +15,4 @@ int main() {
 		if (isTripleSix) cnt++;
 	}
 	std::cout << ans;
-
 }
