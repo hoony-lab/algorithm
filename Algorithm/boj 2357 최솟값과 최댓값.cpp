@@ -3,7 +3,7 @@
 #include <algorithm>
 #include <set>
 long long num[100001], dp[100001][100001];
-	int n, m;
+int n, m;
 void check(long long num[]) {
 	for (int i = 0; i < n; ++i) std::cout << num[i] << ", ";
 	std::cout << '\n';
@@ -16,25 +16,23 @@ int main() {
 	std::cin >> n >> m;
 	for (int i = 0; i < n; ++i) {
 		std::cin >> num[i];
-
 	}
-	
+
 	//// O(logMN) ////TLE
 	//for (int i = 0; i < m; ++i) {
 	//	long long start, end;
 	//	std::cin >> start >> end;
-	//	
+	//
 	//	//std::set<long long> s;
 	//	//
-	//	//for (int j = start - 1; j < end; ++j) 
+	//	//for (int j = start - 1; j < end; ++j)
 	//	//	s.insert(num[j]);
 
 	//	//std::cout << *s.begin() << " " << *(--s.end()) << '\n';
 
 	//}
-		
-	//// have to use segment tree O(MlogN)
 
+	//// have to use segment tree O(MlogN)
 
 	return 0;
 }
