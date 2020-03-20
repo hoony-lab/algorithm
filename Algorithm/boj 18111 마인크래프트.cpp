@@ -12,28 +12,25 @@ int main() {
 	std::cin >> n >> m >> inventory;
 
 	for (int x = 0; x < n; ++x) {
-		for (int y = 0; y < m; ++y) {
+		for (int y = 0; y < m;  ++y) {
 			std::cin >> map[x][y];
 
 			block[map[x][y]]++;
 		}
 	}
 
-	if(inventory)
+	if (inventory)
 
-	//sort(v.begin(), v.end(), [](std::pair<int, int> m1, std::pair<int, int> m2) {
-	//	if (m1.second == m2.second) return m1.first < m2.first;
-	//	else return m1.second > m2.second;
-	//});
+		//sort(v.begin(), v.end(), [](std::pair<int, int> m1, std::pair<int, int> m2) {
+		//	if (m1.second == m2.second) return m1.first < m2.first;
+		//	else return m1.second > m2.second;
+		//});
 
-
-	std::cout << min_time << " " << height;
-
+		std::cout << min_time << " " << height;
 }
 /*
 2초 블록 제거, 인벤토리 넣기
 1초 인벤토리 꺼내기, 블록 놓기
-
 
 #include<iostream>
 using namespace std;
@@ -67,6 +64,5 @@ int main() {
 	cout << result << ' ' << hei;
 }
 https://skyde47.tistory.com/62
-
 
 */
