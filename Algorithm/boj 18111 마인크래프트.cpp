@@ -1,76 +1,50 @@
 #include <iostream>
-#include <map>
-#include <set>
-#include <algorithm>
 #include <vector>
-#include <functional>
 #define ll long long
 
-int map[501][501], block[257];
-std::set < ll> se;
-std::map<ll, ll> ma;
+ll map[501][501];
+
 int main() {
-	int n, m, inventory, max_height = 0, min_height = 1e9, max_block = 0;
-	int max_count = 0, answer = 0;
+	int n, m, inventory, max_height = 0, min_height = 1e11;
+	int answer = 1e11, answer_height = 0;
+
 	std::cin >> n >> m >> inventory;
 
 	for (int x = 0; x < n; ++x) {
 		for (int y = 0; y < m; ++y) {
 			std::cin >> map[x][y];
 
-			//block[map[x][y]]++;
-			ma[map[x][y]]++;
-
-			if (max_count < ma[map[x][y]]) {
-				max_count = ma[map[x][y]];
-				max_block = map[x][y];
-			}
 			if (map[x][y] > max_height) max_height = map[x][y];
 			if (map[x][y] < min_height) min_height = map[x][y];
 		}
 	}
 
-	//std::cout << "max : " << max_height << " || " << "min : " << min_height << '\n';
-	//std::cout << "block[max] : " << block[max_height] << " || " << "block[min] : " << block[min_height] << '\n';
-
-	bool fail = false;
-
-	for (int x = 0; x < n && !fail; ++x) {
-		for (int y = 0; y < m; ++y) {
-			if (map[x][y] == max_block) continue;
-
-			int diff = map[x][y] - max_block;
-
-			if (diff > 0)
-				answer += abs(diff) * 2;
-			else {
-				answer += abs(diff);
-				inventory--;
-				if (inventory < 0) {
-					fail = true;
-					break;
-				}
-			}
-		}
-	}
-
-
-	if (fail) {
-		answer = 0;
+	for (int h = max_height; h >= min_height; --h) {
+		int temp_remove = 0;
+		int temp_add = 0;
 
 		for (int x = 0; x < n; ++x) {
 			for (int y = 0; y < m; ++y) {
-				int diff = map[x][y] - min_height;
+				int temp = h - map[x][y];
 
-				answer += (abs(diff) * 2);
+				if (temp > 0)		temp_add += temp;
+				else if(temp < 0)	temp_remove += temp * (-1);
 			}
 		}
+		
+		if (temp_add <= inventory + temp_remove) {
+			int temp_time = temp_add + temp_remove * 2;
 
-		std::cout << answer << " " << min_height;
+			if (answer > temp_time) {
+				answer = temp_time;
+				answer_height = h;
+			}
+			if (answer == temp_time)
+				if (answer_height < h)
+					answer_height = h;
+		}
 	}
-	else {
-		std::cout << answer << " " << max_block;
-	}
+	std::cout << answer << " " << answer_height;
 	return 0;
 }
 /*
