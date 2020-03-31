@@ -3,12 +3,11 @@
 int visited[102][102];
 int friends[102][102];
 //std::vector <std::vector<int>> v;
-
 int main() {
     int n, m, a, b;
 	std::cin >> n >> m;
 
-	for (int i = 1; i <= n; ++i) {
+	for (int i = 1; i <= m; ++i) {
 		std::cin >> a >> b;
 		friends[a][b] = friends[b][a] = 1;
 	}
