@@ -1,32 +1,51 @@
 #include <iostream>
-#include <map>
-#include <algorithm>
 #include <vector>
-#include <functional>
+#define ll long long
 
-int map[501][501], block[257];
-std::vector<std::pair<int, int>> v;
+ll map[501][501];
 
 int main() {
-	int n, m, inventory, min_time = 1e9, height = 0;
+	int n, m, inventory, max_height = 0, min_height = 1e11;
+	int answer = 1e11, answer_height = 0;
+
 	std::cin >> n >> m >> inventory;
 
 	for (int x = 0; x < n; ++x) {
-		for (int y = 0; y < m;  ++y) {
+		for (int y = 0; y < m; ++y) {
 			std::cin >> map[x][y];
 
-			block[map[x][y]]++;
+			if (map[x][y] > max_height) max_height = map[x][y];
+			if (map[x][y] < min_height) min_height = map[x][y];
 		}
 	}
 
-	if (inventory)
+	for (int h = max_height; h >= min_height; --h) {
+		int temp_remove = 0;
+		int temp_add = 0;
 
-		//sort(v.begin(), v.end(), [](std::pair<int, int> m1, std::pair<int, int> m2) {
-		//	if (m1.second == m2.second) return m1.first < m2.first;
-		//	else return m1.second > m2.second;
-		//});
+		for (int x = 0; x < n; ++x) {
+			for (int y = 0; y < m; ++y) {
+				int temp = h - map[x][y];
 
-		std::cout << min_time << " " << height;
+				if (temp > 0)		temp_add += temp;
+				else if(temp < 0)	temp_remove += temp * (-1);
+			}
+		}
+		
+		if (temp_add <= inventory + temp_remove) {
+			int temp_time = temp_add + temp_remove * 2;
+
+			if (answer > temp_time) {
+				answer = temp_time;
+				answer_height = h;
+			}
+			if (answer == temp_time)
+				if (answer_height < h)
+					answer_height = h;
+		}
+	}
+	std::cout << answer << " " << answer_height;
+	return 0;
 }
 /*
 2초 블록 제거, 인벤토리 넣기

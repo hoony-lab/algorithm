@@ -2,7 +2,7 @@
 #include <algorithm>
 #define FOR(i,n) for(int i = 0 ; i < n ; ++i)
 
-long long tree[1000001], n, goal, max_len;
+int tree[1000001], n, goal, max_len;
 
 int main() {
 	std::ios_base::sync_with_stdio(false); std::cin.tie(NULL);
@@ -15,34 +15,31 @@ int main() {
 
 	std::sort(tree, tree + n);
 
-	long long start = 0, end = max_len;
+	int start = 1, end = max_len;
 	while (start <= end) {
-		long long mid = (start + end) / 2, len_sum = 0;
+		int mid = (start + end) / 2;
+		long long len_sum = 0;
 		
-		FOR(i, n) {
-			if (mid < tree[i]) len_sum += tree[i] - mid;
-		}
-
-		std::cout << start << ", " << mid << ", " << end 
-			<< " SUM : " << len_sum << '\n';
+		FOR(i, n) 
+			if (tree[i] > mid) len_sum += tree[i] - mid;
 		
 
+		//std::cout << start << ", " << mid << ", " << end << " SUM : " << len_sum << '\n';
 
-		if (len_sum < goal) {
-			end = mid - 1;
-		}
-		else if (len_sum > goal) {
-			start = mid + 1;
-			//max_len = max_len < mid ? mid : max_len;
-		}
-		else if (len_sum == goal) {
+		if (len_sum < goal)			end = mid - 1;
+		else						start = mid + 1;
+	
+		/*else if (len_sum == goal) {
 			std::cout << mid;
 
 			return 0;
-		}
-
+		}*/
 	}
 
+
+	std::cout << end;
+
+	return 0;
 }
 /*
 4 7
