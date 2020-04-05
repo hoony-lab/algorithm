@@ -415,6 +415,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="boj 2174 로봇 시뮬레이션.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 2758 로또.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 17471 게리맨더링.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
