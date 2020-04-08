@@ -2,29 +2,19 @@
 #include <vector>
 #include <string>
 #include <queue>
+#include <algorithm>
 #define FOR(i, n, k) for(int i = k ; i <= n ; ++i)
-int main() {
-	std::vector<int> v[11];
-	int n, cnt, place, ppl[11], sum = 0;
-	std::cin >> n;
 
-	FOR(i, n, 1) {
-		std::cin >> ppl[i];
-		sum += ppl[i];
-	}
+std::vector<int> v[11];
+int n, cnt, place, ppl[11];
 
-	FOR(i, n, 1) {
-		std::cin >> cnt;
 
-		FOR(j, cnt, 1) {
-			std::cin >> place;
-			v[i].push_back(place);
-		}
-	}
-
+void bfs(int select[]) {
 	// check if its rotatable
+
 	std::queue<int> q;
 	int visit[11] = { 0, };
+
 	FOR(i, n, 1) {
 		if (v[i].empty || visit[i]) continue;
 		q.push(i);
@@ -34,29 +24,61 @@ int main() {
 			place = q.front();
 			q.pop();
 
+
+
+
+
 			FOR(j, v[place].size() - 1, 0) {
 				q.push(v[place][j]);
 				visit[v[place][j]] = i;
 			}
 		}
 	}
+}
 
-	int solo_cnt = 0, group_num = 0, group_cnt = 0;
-	FOR(i, n, 1) {
-		group_num = visit[i];
-		if (visit[i] == 0)
-			solo_cnt++;
-		if (solo_cnt > 1) {
-			std::cout << -1;
-			return 0;
-		}
-		
+void section() {
+
+	// 15 24 33 (42 51)
+	// 100000 010000 ...
+	int select[11];
+
+
+	FOR(i, n / 2, 1) {
+
+		FOR(j, i, 1) select[i] = 1;
+		FOR(j, n, i) select[i] = 0;
+
+		do {
+			bfs(select);
+		} while (std::next_permutation(select, select + n));
 	}
+}
 
-	while()
+void solve() {
 
+	section();
 
-	std::cout << -1;
+}
+
+void init() {
+
+	std::cin >> n;
+
+	FOR(i, n, 1) std::cin >> ppl[i];
+
+	FOR(i, n, 1) {
+		std::cin >> cnt;
+
+		FOR(j, cnt, 1) {
+			std::cin >> place;
+			v[i].push_back(place);
+		}
+	}
+}
+int main() {
+
+	init();
+	solve();
 
 	return 0;
 }
