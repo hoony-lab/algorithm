@@ -450,6 +450,12 @@
     <ClCompile Include="boj 2579 계단 오르기.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="boj 17836 공주님을 구해라!.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 17471 게리맨더링.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="practice\abocadoTest.h">
