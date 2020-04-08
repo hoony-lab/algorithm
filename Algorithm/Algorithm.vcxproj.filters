@@ -222,18 +222,6 @@
     <ClCompile Include="boj 14500 테트로미노.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="코테45 1.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="코테45 2.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="코테45 3.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="코테45 4.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="boj 10866 덱.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
@@ -399,20 +387,11 @@
     <ClCompile Include="boj 1427 소트인사이드.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
-    <ClCompile Include="코테11 SE.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="boj 1874 스택 수열.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
     <ClCompile Include="boj 2108 통계학.cpp">
       <Filter>소스 파일\solved</Filter>
-    </ClCompile>
-    <ClCompile Include="👏번 - 0초 후에 제출할 수 있습니다.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="🆚번 - 홀수와 짝수의 대결.cpp">
-      <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="boj 18111 마인크래프트.cpp">
       <Filter>소스 파일\solved</Filter>
@@ -455,6 +434,27 @@
     </ClCompile>
     <ClCompile Include="boj 17471 게리맨더링.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="코테45 4.cpp">
+      <Filter>소스 파일\coding_test</Filter>
+    </ClCompile>
+    <ClCompile Include="코테11 SE.cpp">
+      <Filter>소스 파일\coding_test</Filter>
+    </ClCompile>
+    <ClCompile Include="코테45 1.cpp">
+      <Filter>소스 파일\coding_test</Filter>
+    </ClCompile>
+    <ClCompile Include="코테45 2.cpp">
+      <Filter>소스 파일\coding_test</Filter>
+    </ClCompile>
+    <ClCompile Include="코테45 3.cpp">
+      <Filter>소스 파일\coding_test</Filter>
+    </ClCompile>
+    <ClCompile Include="🆚번 - 홀수와 짝수의 대결.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="👏번 - 0초 후에 제출할 수 있습니다.cpp">
+      <Filter>소스 파일\solved</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
