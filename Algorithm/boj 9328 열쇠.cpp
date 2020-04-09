@@ -13,7 +13,7 @@
 int dx[] = { 0,1,0,-1 };
 int dy[] = { 1,0,-1,0 };
 
-std::vector<std::pair<int, int>> enter;
+std::set<std::pair<int, int>> enter;
 
 std::set<std::pair<int, int>> door;
 std::set<char> key;
@@ -73,17 +73,21 @@ void bfs(int i) {
 
 			if (is_key(map[nx][ny])) {
 				key.insert(map[nx][ny]);
+
 				visit[nx][ny] = true;
 				q.push({ nx,ny });
 			}
 
 			if (is_door(map[nx][ny])) {
 				open_door_with_key(nx, ny);
-				enter.push_back({ nx, ny });
+
+				enter.insert({ nx, ny });
+				break;
 			}
 
 			if (is_paper(map[nx][ny])) {
 				ans++;
+
 				visit[nx][ny] = true;
 				q.push({ nx,ny });
 			}
@@ -98,10 +102,10 @@ void init() {
 		std::cin >> map[x][y];
 
 		if (is_door(map[x][y]))
-			door[map[x][y]] = { x, y };
+			door.insert({ x,y });
 
 		if (map[x][y] != WALL && (x == 0 || y == 0 || x == h - 1 || y == w - 1))
-			enter.push_back({ x, y });
+			enter.insert({ x, y });
 	}
 
 	std::cin >> keys;
@@ -115,11 +119,51 @@ void solve() {
 	init();
 
 	while (true) {
-		int entersize = enter.size();
-		FOR(i, entersize) {
 
-			bfs(i);
+		
+		for(auto start : enter) {
+			
+			//bfs(i);
 
+			int sx = start.first;
+			int sy = start.second;
+			if(is_door(map[sx][sy])
+			std::queue<std::pair<int, int>> q;
+			q.push({ sx, sy });
+
+			while (!q.empty()) {
+				int tx = q.front().first;
+				int ty = q.front().second;
+				q.pop();
+
+				FOR(a, 4) {
+					int nx = tx + dx[a];
+					int ny = ty + dy[a];
+
+					if (nx < 0 || ny < 0 || nx >= h || ny >= w || map[nx][ny] == WALL) continue;
+
+					if (is_key(map[nx][ny])) {
+						key.insert(map[nx][ny]);
+
+						visit[nx][ny] = true;
+						q.push({ nx,ny });
+					}
+
+					if (is_door(map[nx][ny])) {
+						open_door_with_key(nx, ny);
+
+						enter.insert({ nx, ny });
+						break;
+					}
+
+					if (is_paper(map[nx][ny])) {
+						ans++;
+
+						visit[nx][ny] = true;
+						q.push({ nx,ny });
+					}
+				}
+			}
 		}
 	}
 	std::cout << ans;
@@ -130,8 +174,8 @@ int main() {
 	int t;
 	std::cin >> t;
 
-	while (t--) 
+	while (t--)
 		solve();
-	
+
 	return 0;
 }
