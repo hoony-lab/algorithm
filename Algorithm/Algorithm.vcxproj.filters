@@ -111,9 +111,6 @@
     <ClCompile Include="solved\boj 1516 게임개발.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
-    <ClCompile Include="solved\boj 17144 미세먼지 안녕.cpp">
-      <Filter>소스 파일\solved</Filter>
-    </ClCompile>
     <ClCompile Include="solved\boj 2529 부등호.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
@@ -360,12 +357,6 @@
     <ClCompile Include="boj 13549 숨바꼭질 3.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
-    <ClCompile Include="boj 12851 숨바꼭질 2.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="boj 1107 리모컨.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="boj 4344 평균은 넘겠지.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
@@ -374,9 +365,6 @@
     </ClCompile>
     <ClCompile Include="boj 1316 그룹 단어 체커.cpp">
       <Filter>소스 파일\solved</Filter>
-    </ClCompile>
-    <ClCompile Include="boj 5622 다이얼.cpp">
-      <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="boj 2941 크로아티아 알파벳.cpp">
       <Filter>소스 파일\solved</Filter>
@@ -426,14 +414,8 @@
     <ClCompile Include="boj 1541 잃어버린 괄호.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
-    <ClCompile Include="boj 2579 계단 오르기.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="boj 17836 공주님을 구해라!.cpp">
       <Filter>소스 파일\solved</Filter>
-    </ClCompile>
-    <ClCompile Include="boj 17471 게리맨더링.cpp">
-      <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="코테45 4.cpp">
       <Filter>소스 파일\coding_test</Filter>
@@ -455,6 +437,24 @@
     </ClCompile>
     <ClCompile Include="👏번 - 0초 후에 제출할 수 있습니다.cpp">
       <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 17471 게리맨더링.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 2225 합분해.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 5622 다이얼.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 2579 계단 오르기.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 12851 숨바꼭질 2.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 9328 열쇠.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
