@@ -1,84 +1,113 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <cstring>
 #include <queue>
 #include <algorithm>
-#define FOR(i, n, k) for(int i = k ; i <= n ; ++i)
+using namespace std;
 
-std::vector<int> v[11];
-int n, cnt, place, ppl[11];
+int n, people[11], connect[11][11], ans = 987654321;
+vector<int> region[2];
 
+void compareRegion() {
+    bool inRegion[2][11]; //각 선거구 내의 지역을 T로 표시 
+    bool visited[2][11]; //방문여부 -> 관계 검사가 끝났을 때 F라면 연결되지 않는 지역인다. 
 
-void bfs(int select[]) {
-	// check if its rotatable
+    memset(inRegion, false, sizeof(inRegion));
+    memset(visited, false, sizeof(visited));
 
-	std::queue<int> q;
-	int visit[11] = { 0, };
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < region[i].size(); j++) {
+            inRegion[i][region[i][j]] = true; //지정된 선거구 내의 지역들을 T로 표시 
+        }
+    }
 
-	FOR(i, n, 1) {
-		if (v[i].empty || visit[i]) continue;
-		q.push(i);
-		visit[i] = i;
+    int countPeople[2];
+    countPeople[0] = countPeople[1] = 0;
 
-		while (!q.empty()) {
-			place = q.front();
-			q.pop();
+    for (int i = 0; i < 2; i++) {
+        if (region[i].size() == 1)
+        {
+            //선거구 내의 지역이 1개이면 인구수는 그 지역의 인구수이다. 
+            countPeople[i] = people[region[i][0]];
+            continue;
+        }
 
+        //연결 검사 
+        queue<int> q;
 
+        q.push(region[i][0]);
+        visited[i][region[i][0]] = true;
 
+        while (!q.empty()) {
+            int now = q.front();
+            q.pop();
 
+            for (int j = 0; j < n; j++) {
+                //연결된 지역을 확인 (같은 선거구 내에 있는)
+                if (connect[now][j] && inRegion[i][j] && !visited[i][j]) {
+                    visited[i][j] = true;
+                    q.push(j);
+                }
+            }
+        }
 
-			FOR(j, v[place].size() - 1, 0) {
-				q.push(v[place][j]);
-				visit[v[place][j]] = i;
-			}
-		}
-	}
+        //인구수 구하기 
+        for (int j = 0; j < region[i].size(); j++) {
+            if (!visited[i][region[i][j]]) return; //연결되지 않는 지역들 
+            countPeople[i] += people[region[i][j]];
+        }
+    }
+    int res = abs(countPeople[0] - countPeople[1]);
+    if (ans > res) ans = res;
 }
 
-void section() {
+void dfs(int cnt) {
+    if (cnt == n) {
+        //n개의 지역을 모두 나눔 
+        if (region[0].size() > 0 && region[1].size() > 0) {
+            compareRegion();
+        }
+        return;
+    }
 
-	// 15 24 33 (42 51)
-	// 100000 010000 ...
-	int select[11];
-
-
-	FOR(i, n / 2, 1) {
-
-		FOR(j, i, 1) select[i] = 1;
-		FOR(j, n, i) select[i] = 0;
-
-		do {
-			bfs(select);
-		} while (std::next_permutation(select, select + n));
-	}
+    for (int i = 0; i < 2; i++)
+    {
+        region[i].push_back(cnt);
+        dfs(cnt + 1);
+        region[i].pop_back();
+    }
 }
 
-void solve() {
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
 
-	section();
+    cin >> n;
 
-}
+    for (int i = 0; i < n; i++) {
+        cin >> people[i]; //인구수 
+    }
 
-void init() {
+    for (int i = 0; i < n; i++) {
+        int tmp; //연결 수 
+        cin >> tmp;
 
-	std::cin >> n;
+        for (int j = 0; j < tmp; j++) {
+            int b;
+            cin >> b;
 
-	FOR(i, n, 1) std::cin >> ppl[i];
+            connect[i][b - 1] = 1;
+            connect[b - 1][i] = 1;
+        }
+    }
 
-	FOR(i, n, 1) {
-		std::cin >> cnt;
+    //각 선거구로 지역을 나눈다. 
+    dfs(0);
 
-		FOR(j, cnt, 1) {
-			std::cin >> place;
-			v[i].push_back(place);
-		}
-	}
-}
-int main() {
+    if (ans == 987654321) cout << -1 << '\n';
+    else cout << ans << '\n';
 
-	init();
-	solve();
-
-	return 0;
+    return 0;
 }
