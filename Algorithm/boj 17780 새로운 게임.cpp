@@ -3,6 +3,7 @@
 #include <vector>
 #include <cstring>
 #include <algorithm>
+#include <deque>
 #define FOR(i, n) for (int i = 0 ; i < n ; ++i)
 
 // R L U D
@@ -20,16 +21,21 @@ int main() {
 	FOR(x, n) FOR(y, n) std::cin >> map[x][y];
 
 	FOR(i, k) {
-		std::cin >> 
+		int xx, yy, way;
+		std::cin >> xx >> yy >> way;
+	
 	}
 
-	std::queue<std::pair<int, int>> q;
-	q.push(std::make_pair(0, 0));
+
+
+
+	std::deque<std::pair<int, int>> q;
+	q.push_front(std::make_pair(0, 0));
 	
 	while (!q.empty()) {
 		int tx = q.front().first;
 		int ty = q.front().second;
-		q.pop();
+		q.pop_front();
 
 		FOR(a, 4) {
 			int nx = tx + dx[a];
@@ -37,7 +43,7 @@ int main() {
 
 			if (nx < 0 || ny < 0 || nx >= n || ny >= n) continue;
 
-			q.push({ nx,ny });
+			q.push_front({ nx,ny });
 			
 			if (map[nx][ny] == 0) {
 
