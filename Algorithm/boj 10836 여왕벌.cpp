@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 #define FOR(i, n) for(int i = 0 ; i < n ; ++i)
 
 int dx[] = { -1, 0, -1, 0, 1 };
@@ -33,24 +34,36 @@ int main() {
 		}
 	}
 
-	for (int x = 1; x < m; ++x) {
-		for (int y = 1; y < m; ++y) {
+	//for (int x = 1; x < m; ++x) {
+	//	for (int y = 1; y < m; ++y) {
 
-			int max_growth = 0;
-			FOR(a, 3) {
-				int nx = x + dx[a];
-				int ny = y + dy[a];
+	//		//int max_growth = 0;
+	//		//FOR(a, 3) {
+	//		//	int nx = x + dx[a];
+	//		//	int ny = y + dy[a];
 
-				max_growth = max_growth > map[nx][ny] ?
-					max_growth : map[nx][ny];
+	//		//	max_growth = max_growth > map[nx][ny] ?
+	//		//		max_growth : map[nx][ny];
 
-				if (a == 2)
-					map[x][y] = max_growth;
-			}
+	//		//	if (a == 2)
+	//		//		map[x][y] = max_growth;
+	//		//}
+
+	//		map[x][y] = map[x - 1][y];
+	//	}
+	//}
+
+	//print();
+
+	FOR(x, m) {
+		FOR(y, m) {
+			if (x == 0 || y == 0)
+				std::cout << map[x][y] << ' ';
+			else
+				std::cout << map[0][y] << ' ';
 		}
+		std::cout << '\n';
 	}
-
-	print();
 
 	return 0;
 }
