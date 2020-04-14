@@ -460,6 +460,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="boj 17780 새로운 게임.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 1195 킥다운.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
