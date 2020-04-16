@@ -4,9 +4,8 @@
 #define FIO std::ios_base::sync_with_stdio(false), std::cin.tie(NULL)
 #define FOR(i,a,b) for(int i = a; i < b; ++i)
 
-int n, guilty[30], g_index[30][30], eunjin;
-int is_dead[30], ans;
-
+int n, guilty[17], g_index[27][27], eunjin;
+int is_dead[27], ans;
 
 int most_guilty(int guilty[]) {
 	int max = 0, res = 0;
@@ -17,8 +16,8 @@ int most_guilty(int guilty[]) {
 	return res;
 }
 
-void dfs(int guilty[], int g_index[][30], int is_dead[], int turn, int ppl) {
-	int guilty_c[30], g_index_c[30][30];
+void dfs(int guilty[], int g_index[][27], int is_dead[], int turn, int ppl) {
+	int guilty_c[27], g_index_c[27][27];
 
 	if (ppl == 1) {
 		if(ans < turn) ans = turn;
@@ -77,10 +76,6 @@ int main() {
 4 3 -2 1
 1
 
-
-
-
-
 2
-¸Þ-
+
 */
