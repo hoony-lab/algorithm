@@ -1,6 +1,7 @@
 #include <iostream>
 #include <queue>
 #include <vector>
+#include <cstring>
 #define FIO std::ios_base::sync_with_stdio(false), std::cin.tie(NULL);
 #define MAX 101
 #define FOR(i, n, m) for(int i = m ; i < n ; ++i)
