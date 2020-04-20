@@ -486,7 +486,16 @@
     <ClCompile Include="boj 15961 회전 초밥.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="boj 7435 합이 0인 네 정수.cpp">
+    <ClCompile Include="boj 7453 합이 0인 네 정수.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 2636 치즈.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 2234 성곽.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 18235 지금 만나러 갑니다.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
