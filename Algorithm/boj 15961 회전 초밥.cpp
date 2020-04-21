@@ -1,9 +1,13 @@
 #include <iostream>
 #include <set>
+#include <deque>
+#include <cstring>
+#define MAX(a, b) a > b ? a : b
 #define FIO std::ios_base::sync_with_stdio(false), std::cin.tie(NULL);
-#define FOR(i, n) for(int i = 0 ; i < n ; ++i)
-int n, d, k, coupon, sushi_belt[3000001], ans;
+#define FOR(i, n, m) for(int i = m ; i < n ; ++i)
+int n, d, k, coupon, sushi_belt[3000001], ans = -1, four[3001], sum;
 std::set<int> sushi;
+std::deque<int> dq;
 /*
 연속된 초밥이면 할인
 초밥의 종류가 쓰인 쿠폰
@@ -15,32 +19,58 @@ void print() {
 		std::cout << a << ", ";
 	std::cout << '\n';
 }
+
 int main() {
 	FIO;
 	std::cin >> n >> d >> k >> coupon;
-	FOR(i, n) std::cin >> sushi_belt[i];
+	FOR(i, n, 0) std::cin >> sushi_belt[i];
 
-	// sushi start num
-	FOR(num, n) {
+	memset(sushi_belt, 0, sizeof(sushi_belt));
+	memset(four, 0, sizeof(four));
 
-		sushi.clear();
+	//// sushi start num
+	//FOR(num, n) {
 
-		FOR(i, k) {
-			int s = (num + i) % d;
-			sushi.emplace(sushi_belt[s]);
-		} 
+	//	sushi.clear();
 
-		//std::cout << "ENTER at : " << num << '\n';
-		//print();
+	//	FOR(i, k) {
+	//		int s = (num + i) % d;
+	//		sushi.emplace(sushi_belt[s]);
+	//	} 
 
-		if (ans <= sushi.size()) {
-			ans = sushi.size();
-			if (!sushi.count(coupon)) ans++;
-			if (ans == k + 1) break;
-		}
+	//	//std::cout << "ENTER at : " << num << '\n';
+	//	//print();
+
+	//	if (ans <= sushi.size()) {
+	//		ans = sushi.size();
+	//		if (!sushi.count(coupon)) ans++;
+	//		if (ans == k + 1) break;
+	//	}
+	//}
+	//std::cout << ans;
+
+
+	FOR(i, n, n - k) {
+		dq.push_front(sushi_belt[i]);
+		if (!four[sushi_belt[i]]) sum++;
+		four[sushi_belt[i]]++;
+		
 	}
-	std::cout << ans;
+	FOR(i, n, 0) {
+		four[dq.front()]--;
+		if (!four[dq.front()]) sum--;
+		dq.pop_front();
 
+		dq.push_back(sushi_belt[i]);
+		if (four[sushi_belt[i]]) sum++;
+		four[sushi_belt[i]]++;
+
+
+		if (!four[coupon])	ans = MAX(ans, sum + 1);
+		else				ans = MAX(ans, sum);
+	}
+
+	std::cout << ans;
 	return 0;
 }
 /*
