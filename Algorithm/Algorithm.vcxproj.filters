@@ -496,7 +496,7 @@
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
     <ClCompile Include="boj 18235 지금 만나러 갑니다.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\solved</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
