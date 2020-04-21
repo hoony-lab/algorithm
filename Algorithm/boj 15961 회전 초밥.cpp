@@ -1,11 +1,12 @@
 #include <iostream>
+#include <string>
 #include <set>
 #include <deque>
 #include <cstring>
 #define MAX(a, b) a > b ? a : b
 #define FIO std::ios_base::sync_with_stdio(false), std::cin.tie(NULL);
 #define FOR(i, n, m) for(int i = m ; i < n ; ++i)
-int n, d, k, coupon, sushi_belt[3000001], ans = -1, four[3001], sum;
+int n, d, k, coupon, sushi_belt[3000001], ans = -1, eat[3001], sum;
 std::set<int> sushi;
 std::deque<int> dq;
 /*
@@ -26,7 +27,7 @@ int main() {
 	FOR(i, n, 0) std::cin >> sushi_belt[i];
 
 	memset(sushi_belt, 0, sizeof(sushi_belt));
-	memset(four, 0, sizeof(four));
+	memset(eat, 0, sizeof(eat));
 
 	//// sushi start num
 	//FOR(num, n) {
@@ -52,24 +53,24 @@ int main() {
 
 	FOR(i, n, n - k) {
 		dq.push_front(sushi_belt[i]);
-		if (!four[sushi_belt[i]]) sum++;
-		four[sushi_belt[i]]++;
-		
+		if (!eat[sushi_belt[i]]) sum++;
+		eat[sushi_belt[i]]++;	
 	}
+
+
 	FOR(i, n, 0) {
-		four[dq.front()]--;
-		if (!four[dq.front()]) sum--;
+		eat[dq.front()]--;
+		if (!eat[dq.front()]) sum--;
 		dq.pop_front();
 
 		dq.push_back(sushi_belt[i]);
-		if (four[sushi_belt[i]]) sum++;
-		four[sushi_belt[i]]++;
+		if (eat[sushi_belt[i]]) sum++;
+		eat[sushi_belt[i]]++;
 
-
-		if (!four[coupon])	ans = MAX(ans, sum + 1);
+		if (!eat[coupon])	ans = MAX(ans, sum + 1);
 		else				ans = MAX(ans, sum);
 	}
-
+	
 	std::cout << ans;
 	return 0;
 }
