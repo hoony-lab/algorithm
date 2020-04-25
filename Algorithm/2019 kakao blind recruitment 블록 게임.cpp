@@ -1,3 +1,4 @@
+//https://programmers.co.kr/learn/courses/30/lessons/42894
 #include <iostream>
 #include <vector>
 #include <cstring>
@@ -9,20 +10,33 @@ using namespace std;
 
 // ¤¤ J L ¤Ò ¤Ç
 // start from the bottom which has no upper block
-int blockx[5][3] = {
-	{0, 0, -1},
-	{0,-1, -2},
-	{0,-1, -2},
-	{0, 0, -1},
-	{0, 0, -1} };
-int blocky[5][3] = {
-	{-1, -2, -2 },
-	{1, 1, 1},
-	{-1, -1, -1},
-	{-1, 1, 1},
-	{-1, -2, -1} };
+//int blockx[5][3] = {
+//	{0, 0, -1},
+//	{0,-1, -2},
+//	{0,-1, -2},
+//	{0, 0, -1},
+//	{0, 0, -1} };
+//int blocky[5][3] = {
+//	{-1, -2, -2 },
+//	{1, 1, 1},
+//	{-1, -1, -1},
+//	{-1, 1, 1},
+//	{-1, -2, -1} };
 
-int n, block[BLOCKMAX], answer;
+int blockx[5][4] = {
+	{0, 0, 0, -1},
+	{0, 0,-1, -2},
+	{0, 0,-1, -2},
+	{0, 0, 0, -1},
+	{0, 0, 0, -1} };
+int blocky[5][4] = {
+	{0, -1, -2, -2 },
+	{0, -1, 0, 0},
+	{0, -1, -1, -1},
+	{0, -1, -2, 0},
+	{0, -1, -2, -1} };
+
+int n, opened_block[BLOCKMAX], answer;
 vector<vector<int>> map;
 
 void print() {
@@ -39,32 +53,38 @@ bool check(int x, int y) {
 	return true;
 }
 
-bool is_closed(int x, int y) {
+bool is_opened(int x, int y) {
 	int nx = x, ny = y;
 
+	// move up
 	while (check(--nx, ny)) {
+
+		// if map is 0 or same as starting point, move up
 		if (map[nx][ny] == 0 || map[nx][ny] == map[x][y]) continue;
-		if (block[map[x][y]]) continue;
-		block[map[x][y]] = true;
-		return true;
+
+		opened_block[map[x][y]] = false;
+		return false;
 	}
-	return false;
+	return true;
 }
 
 bool check_block_shape(int x, int y) {
 
+	// check 5 possible shape
 	F(a, 5) {
 		bool fail = false;
-		F(b, 3) {
+		F(b, 4) {
+
+			// if map is not same as starting point or closed
 			int nx = x + blockx[a][b], ny = y + blocky[a][b];
-			if (!check(nx, ny) || map[nx][ny] != map[x][y])
+			if (!check(nx, ny) || map[nx][ny] != map[x][y] || !is_opened(nx,ny))
 				fail = true;
 		}
 
-		if (!fail && !block[map[x][y]]) {
+		if (!fail && opened_block[map[x][y]]) {
+
 			// erase number on the erasable block
-			map[x][y] = 0;
-			F(b, 3) map[x + blockx[a][b]][y + blocky[a][b]] = 0;
+			F(b, 4) map[x + blockx[a][b]][y + blocky[a][b]] = 0;
 
 			// debugging
 			cout << "Done at " << x << ", " << y << " : " << "shape : " << a <<"\n";
@@ -78,11 +98,10 @@ bool check_block_shape(int x, int y) {
 
 
 void solve() {
-	memset(block, 0, sizeof(block));
+	memset(opened_block, true, sizeof(opened_block));
 
 	FR(x, n) FR(y, n) {
 		if (!map[x][y]) continue;
-		if (is_closed(x, y)) continue;
 		if (!check_block_shape(x, y)) continue;
 
 		answer++;
@@ -107,7 +126,7 @@ int solution(vector<vector<int>> board) {
 int main() {
 
 	vector<vector<int>> board = {
-		{0, 0, 11, 11, 11, 0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 		{0, 0, 0, 0, 6, 0, 0, 0, 0, 0},
 		{0, 0, 10, 6, 6, 6, 0, 0, 0, 0},
 		{0, 10, 10, 10, 0, 0, 0, 0, 0, 0},
@@ -121,4 +140,4 @@ int main() {
 	cout << solution(board);	// 2
 	
 	return 0;
-}
+} 
