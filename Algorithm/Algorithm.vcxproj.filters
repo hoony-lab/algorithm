@@ -510,6 +510,15 @@
     <ClCompile Include="2019 kakao blind recruitment 블록 게임.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="2019 kakao blind recruitment 블록 게임2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="2019 kakao blind recruitment 블록 게임3.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="2019 kakao blind recruitment 무지의 먹방 라이브.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="practice\abocadoTest.h">
