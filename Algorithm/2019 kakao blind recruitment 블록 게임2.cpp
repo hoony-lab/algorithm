@@ -113,7 +113,7 @@ void solve() {
 		if (!is_block_opened(num)) continue;
 		erase_block(num);
 
-		print_map();
+		//print_map();
 
 		answer++; 
 		solve();
@@ -137,7 +137,7 @@ int solution(vector<vector<int>> board) {
 		block[map[x][y]].push_back(make_pair(x, y));
 	}
 
-	print_block();
+	//print_block();
 
 	solve();
 
