@@ -1,59 +1,52 @@
 #include <string>
 #include <vector>
 #include <iostream>
-#include <set>
-#include <algorithm >
+#include <algorithm>
+#include <map>
 typedef long long ll;
 using namespace std;
+vector<pair<int, int>> v;
+//ll left_food[200001];
+//map<ll, ll> left_food, extra_eat;
 
-set<int> s;
+void print(vector<pair<int, int>> v) {
+	for (auto p : v) 
+		cout << p.first << ", " << p.second << '\n';
+	cout << "\n\n";
+
+}
 int solution(vector<int> food_times, ll k) {
-	//int answer = 0;
-	//ll foods = 0;
-	//ll round = k / food_times.size();
-	//ll post = k % food_times.size();
-	//ll all_eat_cnt = 0;
+	ll fsize = food_times.size();
+	ll round = k / food_times.size();
+	ll remain_turn = k % food_times.size();
+	ll all_eat_cnt = 0;
+	
+	for (int i = 0; i < fsize; ++i) 
+		v.push_back({ food_times[i], i + 1 });
+	
+	sort(v.begin(), v.end(), [](auto v1, auto v2) {
+		if (v1.first == v2.first)
+			return v1.second < v2.second;
+		return v1.first < v2.first;
+	});
 
-	//for (int i = 0; i < food_times.size(); ++i) {
+	//print(v);
 
-	//	ll eat = i < post ? round : round + 1;
-	//	foods += food_times[i];
+	ll extra_eat = 0;
+	for (int i = k + 1; i <= fsize+k; ++i) {
+		i %= fsize+1;
 
-	//	if (food_times[i] <= eat)
-	//		all_eat_cnt++;
+		round = v[i].second <= remain_turn ? round + 1 : round;
 
+		ll left_food = (v[i].first - round);
+		left_food -= extra_eat;
 
-	//}
+		//cout << v[i].first << ", " << v[i].second << " << " << left_food << " :::: " <<  extra_eat << '\n';
 
-	//if (foods < k)
-	//	return -1;
+		if (left_food > 0) return v[i].second;
 
-
-	int answer = 0;
-
-	ll sum = 0;
-	vector<pair<int, int>> v;
-	for (int i = 0; i < food_times.size(); ++i) {
-		v.push_back({ food_times[i], i });
-		sum += food_times[i];
+		extra_eat = left_food;
 	}
-	sort(v.begin(), v.end());
-
-	//sort(v.begin(), v.end(), [](pair<int, int> p1, pair<int, int> p2) {
-	//	if (p1.first == p2.first)
-	//		return p1.second < p2.second;
-	//	return p1.first < p2.first;
-	//});
-
-
-	for (pair<int, int> p : v) {
-		ll time = (ll)(p.first - 0);
-
-		p.first;
-		p.second;
-	}
-
-
 
 	return -1;
 }
