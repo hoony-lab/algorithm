@@ -7,7 +7,9 @@
 #define F(i, n) for(int i = 0 ; i < n ; ++i)
 #define BLOCKMAX 201
 using namespace std;
-
+struct blockkk {
+	int x, y, shape;
+};
 // ¤¤ J L ¤Ò ¤Ç
 // start from the top, left to right
 int blockx[5][4] = {
@@ -18,14 +20,14 @@ int blockx[5][4] = {
 	{0, 1, 1, 1} };
 int blocky[5][4] = {
 	{0, 0, 1, 2},
-	{0, 0, 0, -1},
+	{0, 0, -1, 0},
 	{0, 0, 0, 1},
 	{0, -2, -1, 0},
 	{0, -1, 0, 1} };
 
 int n, answer;
 vector<vector<int>> map;
-vector<pair<int, int>> block[BLOCKMAX];
+vector<blockkk> block[BLOCKMAX];
 set<int> block_num;
 
 void print_map() {
@@ -39,7 +41,7 @@ void print_block() {
 	for (int num : block_num) {
 		cout << num << "\t<\t";
 		for (auto pos : block[num]) {
-			cout << pos.first << ", " << pos.second << "  ||  ";
+			cout << pos.x << ", " << pos.y << "  ||  ";
 		}
 		cout << '\n';
 	}cout << "\n\n";
@@ -51,22 +53,32 @@ bool check(int x, int y) {
 }
 
 void erase_block(int num) {
-	for (auto pos : block[num]) map[pos.first][pos.second] = 0;
+	for (auto pos : block[num])
+		map[pos.x][pos.y] = 0;
 	block_num.erase(num); answer++;
 }
 
 bool is_block_opened(int num) {
-	int x = block[num][0].first;
-	int y = block[num][0].second;
+	int x = block[num][0].x;
+	int y = block[num][0].y;
 
-	for (auto pos : block[num]) {
-		int nx = pos.first, ny = pos.second;
+	//for (auto pos : block[num]) {
+		//int nx = pos.x, ny = pos.y;
 
-		while (check(nx, ny)) {
-			if (map[nx][ny] == 0 || map[nx][ny] == map[x][y]) {
-				nx--; continue;
-			}
-			return false;
+	for (int i = 0; i < block[num].size(); ++i) {
+		int nx = block[num][i].x;
+		int ny = block[num][i].y;
+		int shape = block[num][i].shape;
+
+		if (shape == 0 && (i == 0 || i == 1)) continue;
+		else if (shape == 1 && (i == 0 || i == 1 || i == 3)) continue;
+		else if (shape == 2 && (i == 0 || i == 1 || i == 2)) continue;
+		else if (shape == 3 && (i == 0 || i == 3)) continue;
+		else if (shape == 4 && (i == 0 || i == 2)) continue;
+
+		while (check(--nx, ny)) {
+			if (map[nx][ny] == 0) continue;
+			if (map[nx][ny] != map[x][y]) return false;
 		}
 	}
 	return true;
@@ -87,9 +99,9 @@ void check_shape(int x, int y) {
 			// if its possible shape
 			block_num.insert(map[x][y]);
 			F(b, 4)
-				block[map[x][y]].push_back(
-					make_pair(x + blockx[a][b], y + blocky[a][b]));
-			
+				block[map[x][y]].push_back({
+				x + blockx[a][b], y + blocky[a][b], a });
+
 			//std::cout << " shape : " << x << " , " << y << " :: " << a << '\n';
 			return;
 		}
@@ -98,8 +110,8 @@ void check_shape(int x, int y) {
 }
 
 void solve() {
-	
-	print_block();
+
+	//print_block();
 
 	bool flag;
 	do {
@@ -109,14 +121,14 @@ void solve() {
 
 			erase_block(num);
 
-			print_map();
+			//print_map();
 
 			flag = true;
 			break;
 		}
 	} while (flag);
 
-	print_block();
+	//print_block();
 }
 
 
@@ -126,7 +138,7 @@ int solution(vector<vector<int>> board) {
 	answer = 0;
 
 	F(x, n) F(y, n) {
-		if (!map[x][y] || block_num.count(map[x][y])) continue;
+		if (!map[x][y] /*|| block_num.count(map[x][y])*/) continue;
 		check_shape(x, y);
 	}
 
