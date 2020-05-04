@@ -534,10 +534,13 @@
     <ClCompile Include="2020 kakao blind recuritment 문자열 압축.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="2020 kakao blincd recruitment 블록 이동하기.cpp">
+    <ClCompile Include="2020 kakao blind recruitment 기사 검색.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="2020 kakao blind recruitment 기사 검색.cpp">
+    <ClCompile Include="2020 kakao blind recruitment 블록 이동하기.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="2020 kakao blind recruitment 외벽 점검.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
