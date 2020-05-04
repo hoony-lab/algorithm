@@ -537,6 +537,9 @@
     <ClCompile Include="2020 kakao blincd recruitment 블록 이동하기.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="2020 kakao blind recruitment 기사 검색.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="practice\abocadoTest.h">
