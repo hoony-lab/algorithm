@@ -136,6 +136,7 @@
     <ClCompile Include="2019 kakao blind recruitment 매칭 점수.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="2020 kakao blincd recruitment 블록 이동하기.cpp" />
     <ClCompile Include="2020 kakao blind recruitment 자물쇠와 열쇠.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
