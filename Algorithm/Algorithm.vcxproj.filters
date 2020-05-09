@@ -544,19 +544,19 @@
       <Filter>소스 파일\coding_test</Filter>
     </ClCompile>
     <ClCompile Include="2020 kakao internship 1.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\coding_test</Filter>
     </ClCompile>
     <ClCompile Include="2020 kakao internship 2.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\coding_test</Filter>
     </ClCompile>
     <ClCompile Include="2020 kakao internship 3.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\coding_test</Filter>
     </ClCompile>
     <ClCompile Include="2020 kakao internship 4.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\coding_test</Filter>
     </ClCompile>
     <ClCompile Include="2020 kakao internship 5.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\coding_test</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
