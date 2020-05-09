@@ -507,40 +507,55 @@
     <ClCompile Include="boj 5052 전화번호 목록.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
-    <ClCompile Include="2019 kakao blind recruitment 블록 게임.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="2019 kakao blind recruitment 블록 게임3.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="2019 kakao blind recruitment 무지의 먹방 라이브.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="2019 kakao blind recruitment 후보키.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="2019 kakao blind recruitment 오픈채팅방.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="2019 kakao blind recruitment 매칭 점수.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="2020 kakao blind recuritment 문자열 압축.cpp">
+      <Filter>소스 파일\coding_test</Filter>
     </ClCompile>
     <ClCompile Include="2019 kakao blind recruitment 길 찾기 게임.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\coding_test</Filter>
     </ClCompile>
-    <ClCompile Include="2020 kakao blind recruitment 자물쇠와 열쇠.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="2019 kakao blind recruitment 매칭 점수.cpp">
+      <Filter>소스 파일\coding_test</Filter>
     </ClCompile>
-    <ClCompile Include="2020 kakao blind recuritment 문자열 압축.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="2019 kakao blind recruitment 무지의 먹방 라이브.cpp">
+      <Filter>소스 파일\coding_test</Filter>
+    </ClCompile>
+    <ClCompile Include="2019 kakao blind recruitment 블록 게임.cpp">
+      <Filter>소스 파일\coding_test</Filter>
+    </ClCompile>
+    <ClCompile Include="2019 kakao blind recruitment 블록 게임3.cpp">
+      <Filter>소스 파일\coding_test</Filter>
+    </ClCompile>
+    <ClCompile Include="2019 kakao blind recruitment 오픈채팅방.cpp">
+      <Filter>소스 파일\coding_test</Filter>
+    </ClCompile>
+    <ClCompile Include="2019 kakao blind recruitment 후보키.cpp">
+      <Filter>소스 파일\coding_test</Filter>
     </ClCompile>
     <ClCompile Include="2020 kakao blind recruitment 기사 검색.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\coding_test</Filter>
     </ClCompile>
     <ClCompile Include="2020 kakao blind recruitment 블록 이동하기.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\coding_test</Filter>
     </ClCompile>
     <ClCompile Include="2020 kakao blind recruitment 외벽 점검.cpp">
+      <Filter>소스 파일\coding_test</Filter>
+    </ClCompile>
+    <ClCompile Include="2020 kakao blind recruitment 자물쇠와 열쇠.cpp">
+      <Filter>소스 파일\coding_test</Filter>
+    </ClCompile>
+    <ClCompile Include="2020 kakao internship 1.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="2020 kakao internship 2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="2020 kakao internship 3.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="2020 kakao internship 4.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="2020 kakao internship 5.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
