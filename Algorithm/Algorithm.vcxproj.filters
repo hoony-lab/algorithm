@@ -562,6 +562,9 @@
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
     <ClCompile Include="boj 11723 집합.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 1927 최소 힙.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
