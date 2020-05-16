@@ -498,9 +498,6 @@
     <ClCompile Include="boj 15961 회전 초밥.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
-    <ClCompile Include="boj 13022 늑대와 올바른 단어.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="boj 17472 다리 만들기 2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -571,6 +568,15 @@
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
     <ClCompile Include="boj 3025 돌 던지기.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 13022 늑대와 올바른 단어.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 2589 보물섬.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 3678 카탄의 개척자.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
