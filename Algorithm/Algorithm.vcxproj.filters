@@ -579,6 +579,9 @@
     <ClCompile Include="boj 3678 카탄의 개척자.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
+    <ClCompile Include="boj 4991 로봇 청소기.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="practice\abocadoTest.h">
