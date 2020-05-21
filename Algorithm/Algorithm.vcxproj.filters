@@ -312,9 +312,6 @@
     <ClCompile Include="boj 17219 비밀번호 찾기.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
-    <ClCompile Include="소스.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="boj 2638 치즈.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
@@ -579,11 +576,11 @@
     <ClCompile Include="boj 3678 카탄의 개척자.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
-    <ClCompile Include="boj 4991 로봇 청소기.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="boj 3649 로봇 프로젝트.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 4991 로봇 청소기.cpp">
+      <Filter>소스 파일\solved</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
