@@ -591,6 +591,12 @@
     <ClCompile Include="boj 1062 가르침.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="boj 1740 거듭제곱.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 15659 연산자 끼워넣기 (3).cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="practice\abocadoTest.h">
