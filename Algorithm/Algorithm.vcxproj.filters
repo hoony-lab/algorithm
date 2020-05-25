@@ -597,6 +597,9 @@
     <ClCompile Include="boj 15659 연산자 끼워넣기 (3).cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="boj 17837 새로운 게임 2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="practice\abocadoTest.h">
