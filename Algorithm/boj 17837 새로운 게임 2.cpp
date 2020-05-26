@@ -18,10 +18,6 @@ di chess[MAX][MAX];
 int map[MAX][MAX];
 int n, k, ans;
 
-void move(int x, int y, int nx, int ny) {
-	
-}
-
 bool check_bottom(int i, int x, int y, int ud) {
 	if (ud) {
 		if (chess[x][y].front() != i)	return false;
@@ -45,7 +41,7 @@ int main() {
 
 	// init();
 	// 0 white, 1 red, 2 blue
-	cin >> n >> k; 
+	cin >> n >> k;
 	F(x, n) F(y, n) cin >> map[x][y];
 	F(i, k) {
 		int x, y, w;	cin >> x >> y >> w;
@@ -83,25 +79,26 @@ int main() {
 				}
 			}
 			else if (map[nx][ny] == 1) {
-				// 하노이의 탑처럼 뽑았다가 또 뽑기
-				di tmp;
-				if (ud) {
-					F(k, i) {
-						tmp.push_front(chess[x][y].front());
-						chess[x][y].pop_front();
-					}
-					chess[nx][ny].push_back(tmp.front());
-					tmp.pop_front();
-				}
-				else {
-					FR(k, i, vsize - 1) {
-						tmp.push_back(chess[x][y].back());
-						chess[x][y].pop_back();
-					}
-					chess[nx][ny].push_back(tmp.back());
-					tmp.pop_back();
-				}
 				v[i].upside_down = ~ud;
+			}
+
+			// 하노이의 탑처럼 뽑았다가 또 뽑기
+			di tmp;
+			if (ud) {
+				F(k, i) {
+					tmp.push_front(chess[x][y].front());
+					chess[x][y].pop_front();
+				}
+				chess[nx][ny].push_back(tmp.front());
+				tmp.pop_front();
+			}
+			else {
+				FR(k, i, vsize - 1) {
+					tmp.push_back(chess[x][y].back());
+					chess[x][y].pop_back();
+				}
+				chess[nx][ny].push_back(tmp.back());
+				tmp.pop_back();
 			}
 
 			if (is_end) {
