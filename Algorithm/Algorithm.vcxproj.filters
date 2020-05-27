@@ -600,6 +600,9 @@
     <ClCompile Include="boj 17837 새로운 게임 2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="2020 kakao 신입공채 비밀지도.cpp">
+      <Filter>소스 파일\coding_test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="practice\abocadoTest.h">
