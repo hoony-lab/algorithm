@@ -18,26 +18,8 @@ di chess[MAX][MAX];
 int map[MAX][MAX];
 int n, k, ans;
 
-bool check_bottom(int i, int x, int y, int ud) {
-	if (ud) {
-		if (chess[x][y].front() != i)	return false;
-	}
-	else {
-		if (chess[x][y].back() != i)	return false;
-	}
-	return true;
-}
 bool check(int x, int y) {
 	return !(x < 0 || y < 0 || x >= n || y >= n);
-}
-
-bool is_end() {
-	if (chess[v.front().x][v.front().y].size() != k) 
-		return false;
-	else {
-		cout << "chesssize " << chess[v.front().x][v.front().y].size() << " :     K " << k << '\n';
-		return true;
-	}
 }
 
 int main() {
@@ -47,7 +29,7 @@ int main() {
 	// 0 white, 1 red, 2 blue
 	cin >> n >> k;
 	F(x, n) F(y, n) cin >> map[x][y];
-	F(i, k) {
+	F(i, k) {	
 		int x, y, w;	cin >> x >> y >> w;
 		v.push_back({ x - 1, y - 1, w - 1, 0 });
 		chess[x - 1][y - 1].push_back(i);
@@ -92,24 +74,26 @@ int main() {
 			// 하노이의 탑처럼 뽑았다가 또 뽑기
 			di tmp;
 			if (ud) {
-				F(k, i + 1) {
+				F(a, i + 1) {
 					tmp.push_front(chess[x][y].front());
 					chess[x][y].pop_front();
+					v[a].x = nx, v[a].y = ny;
 				}
 				chess[nx][ny].push_back(tmp.front());
 				tmp.pop_front();
 			}
 			else {
 				//FR(k, i, chess[x][y].size() - 1) {
-				for(int k = chess[x][y].size() - 1 ; k >= i ; --k){
+				for(int a = chess[x][y].size() - 1 ; a >= i ; --a){
 					tmp.push_back(chess[x][y].back());
 					chess[x][y].pop_back();
+					v[a].x = nx, v[a].y = ny;
 				}
 				chess[nx][ny].push_back(tmp.back());
 				tmp.pop_back();
 			}
 
-			if (is_end()) {
+			if (chess[nx][ny].size() == k) {
 				cout << ans;
 				return 0;
 			}
