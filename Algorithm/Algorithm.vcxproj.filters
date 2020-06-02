@@ -603,11 +603,14 @@
     <ClCompile Include="2020 kakao 신입공채 비밀지도.cpp">
       <Filter>소스 파일\coding_test</Filter>
     </ClCompile>
-    <ClCompile Include="boj 14503 로봇 청소기.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="boj 15683 감시.cpp">
       <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 14503 로봇 청소기.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 16234 인구 이동.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
