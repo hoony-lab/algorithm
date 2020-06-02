@@ -1,26 +1,31 @@
+// https://www.acmicpc.net/problem/16234
 // 20200602 1743
 #include <iostream>
 #include <vector>
 #include <queue>
-#include <memory.h>
-using namespace std;
-#define FIO ios_base::sync_with_stdio(false); cin.tie(NULL);
-#define F(i ,n) for(int i = 0 ; i < n ; ++i)
+#include <cstring>
+#include <cstdlib>
+#include <cmath>
+//#include <bits/stdc++.h>
+//using namespace std;
+#define FIO std::ios_base::sync_with_stdio(false); std::cin.tie(NULL);
+#define F(i, n) for(int i = 0 ; i < n ; ++i)
 #define MAX 101
-struct p { int x, y, cnt; };
+struct p { int x, y; };
 int dx[] = { 0,1,0,-1 }, dy[] = { 1,0,-1,0 };
 
 //l명 이상, r명 이하
-int n, l, r, map[MAX][MAX], group_map[MAX][MAX], group[MAX];
-int visit[MAX][MAX];
+int n, l, r, ans, area[MAX][MAX];
+///		배열 크기 RunTime Error
+int visit[MAX][MAX], group_sum[MAX * MAX], group_cnt[MAX * MAX];
 
-void print(int map[][MAX]) {
-	F(x, n) {
-		F(y, n) {
-			cout << map[x][y];
-		}cout << '\n';
-	}cout << "\n\n";
-}
+//void print(int area[][MAX]) {
+//	F(x, n) {
+//		F(y, n) {
+//			cout << area[x][y];
+//		}cout << '\n';
+//	}cout << "\n\n";
+//}
 
 bool gap_check(int gap) {
 	if (l <= gap && gap <= r) return true;
@@ -32,52 +37,63 @@ bool check(int x, int y) {
 }
 
 void bfs() {
-	// F(i, MAX) fill(visit[i][0], visit[i][MAX], 0);
-	int group_num = 0, group_cnt = 1;
-	queue<p> q;
-	memset(visit, 0, sizeof(visit));
+	while (1) {
+		// F(i, MAX) fill(visit[i][0], visit[i][MAX], 0);
+		std::queue<p> q;
+		int group_num = 0;
+		memset(visit, 0, sizeof(visit));
+		memset(group_sum, 0, sizeof(group_sum));
+		memset(group_cnt, 0, sizeof(group_cnt));
 
+		// group with possible gap
+		F(x, n) F(y, n) {
+			if (visit[x][y]) continue;
+			visit[x][y] = ++group_num;
+			q.push({ x,y });
+			group_cnt[group_num]++;
+			group_sum[group_num] = area[x][y];
 
-	// group with possible gap
-	F(x, n) F(y, n) {
-		if (visit[x][y]) continue;
+			while (!q.empty()) {
+				int tx = q.front().x, ty = q.front().y;
+				q.pop();
 
-		visit[x][y] = ++group_num;
-		q.push({ x,y });
-		group_cnt = 1;
-		group[group_num] = map[x][y];
+				F(a, 4) {
+					int nx = tx + dx[a], ny = ty + dy[a];
+					if (!check(nx, ny) || visit[nx][ny]) continue;
 
-		while (!q.empty()) {
-			int tx = q.front().x, ty = q.front().y, tc = q.front().cnt;
-			q.pop();
+					// l <= gap <= r
+					int gap = std::abs(area[nx][ny] - area[tx][ty]);
+					if (!gap_check(gap)) continue;
 
-			F(a, 4) {
-				int nx = tx + dx[a], ny = ty + dy[a];
-				if (!check(nx, ny) || visit[nx][ny]) continue;
-
-
-				// l <= gap <= r
-				int gap = abs(map[nx][ny] - map[tx][ty]);
-				if (!gap_check(gap)) continue;
-
-				visit[nx][ny] = visit[tx][ty];
-				q.push({ nx,ny });
-				group_cnt++;
-				group[group_num] += map[nx][ny];
+					visit[nx][ny] = visit[tx][ty];
+					q.push({ nx,ny });
+					group_cnt[group_num]++;
+					group_sum[group_num] += area[nx][ny];
+				}
 			}
+
 		}
-	}
 
-	F(x, n) F(y, n) {
+		//cout << "Turn : " << ans << '\n';
+		//print(map);
+		//print(visit);
 
+		if (group_num == n * n) break;
+
+		ans++;
+
+		F(x, n) F(y, n)
+			area[x][y] = group_sum[visit[x][y]] / group_cnt[visit[x][y]];
 	}
 }
 
 int main() {
-	cin >> n >> l >> r;
-	F(x, n) F(y, n) cin >> map[x][y];
+	FIO;
+	std::cin >> n >> l >> r;
+	F(x, n) F(y, n) std::cin >> area[x][y];
 
 	bfs();
 
+	std::cout << ans;
 	return 0;
 }
