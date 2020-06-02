@@ -61,14 +61,15 @@ void play() {
 		// 뒤가 벽이면
 		// 뒤가 벽이 아니면
 		p bpos = turn(r, c, d, BACK);
-		if (map[bpos.x][bpos.y] == 1 || map[bpos.x][bpos.y] == 2)
+		if (map[bpos.x][bpos.y] == 1)
 			return;
 		else
-			r = bpos.x, c = bpos.y, d = (4 + d - (BACK)) % 4;
+			r = bpos.x, c = bpos.y;
 	}
 }
 int main() {
 	std::cin >> n >> m >> r >> c >> d;
+
 	F(x, n) F(y, m) std::cin >> map[x][y];
 
 	play();
