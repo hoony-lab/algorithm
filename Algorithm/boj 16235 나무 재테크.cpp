@@ -16,15 +16,20 @@ void print(int map[][MAX]) {
 	std::cout << "map \n";
 	F(x, n) {
 		F(y, n) {
-			std::cout << map[x][y];
+			std::cout << map[x][y] << " ";
 		}std::cout << '\n';
-	};
+	}
 }
 void print_tree() {
 	std::cout << "tree \n";
+	int cmap[MAX][MAX]{};
+
 	for (auto t : tree) {
+		cmap[t.x][t.y]++;
 		std::cout << t.x << ", " << t.y << ", " << t.z << '\n';
 	}
+
+	print(cmap);
 }
 bool check(int x, int y) {
 	return !(x < 0 || y < 0 || x >= n || y >= n);
@@ -39,11 +44,15 @@ void spring() {
 
 	F(i, tree_size) {
 		int tx = tree[i].x, ty = tree[i].y, tz = tree[i].z;
-		if (tz < 0 ) continue;
-
-		// 양분이 부족해 자신의 나이만큼 양분을 먹을 수 없는 나무는 양분을 먹지 못하고 즉시 죽는다. (나이를 음수처리 함으로써 죽음 표시)
+		if (tz <= 0) continue;
+		// 자신의 나이만큼 양분을 먹고, 나이가 1 증가한다.
+		// 양분이 부족해 자신의 나이만큼 양분을 먹을 수 없는 나무는 양분을 먹지 못하고 즉시 죽는다.
+		// (나이를 음수처리 함으로써 죽음 표시)
 		if (tz > map[tx][ty]) tree[i].z *= -1;
-		else	 map[tx][ty] -= tree[i].z;
+		else {
+			map[tx][ty] -= tree[i].z;
+			tree[i].z++;
+		}
 		
 	}
 }
@@ -52,9 +61,9 @@ void summer() {
 	F(i, tree_size) {
 		// 봄에 죽은 나무가 양분으로 변하게 된다.
 		int tx = tree[i].x, ty = tree[i].y, tz = tree[i].z;
-		if (tz) continue;
+		if (tz >= 0) continue;
 		map[tx][ty] += (-tz) / 2;
-
+		tree[i].z = 0;
 		// tree.erase(tree.begin() + i);
 	}
 }
@@ -63,7 +72,8 @@ void autumn() {
 	F(i, tree_size) {
 		int tz = tree[i].z;
 		// 번식하는 나무는 나이가 5의 배수이어야 하며,
-		if (!tz || tz % 5 != 0) continue;
+		// std::cout << "visit : " << tree[i].x << ", " << tree[i].y << ", " << tree[i].z << '\n';
+		if (tz <= 0 || tz % 5 != 0) continue;
 
 		// 인접한 8개의 칸에 나이가 1인 나무가 생긴다. 
 		F(a, 8) {
@@ -89,16 +99,15 @@ int main() {
 	}
 	
 	F(year, k) {
-		print(map);
-		print_tree();
-		std::cout << "\n\n";
 
 		spring();
 		summer();
 		autumn();
 		winter();
 
-
+		//print(map);
+		//print_tree();
+		//std::cout << "\n\n";
 	}
 
 	auto zz = std::count_if(tree.begin(), tree.end(), [](T t1) {
