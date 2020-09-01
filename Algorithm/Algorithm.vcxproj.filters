@@ -625,6 +625,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="boj 17413 단어 뒤집기 2.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 2116 주사위 쌓기.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
