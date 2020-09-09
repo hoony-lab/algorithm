@@ -13,31 +13,29 @@ int dt[][6] = {
 };
 int n, dice[10001][6], ans, sum;
 
-void solve(int lvl, int surface) {
-	cout << "LVL : " << lvl << " :: SURFACE : " << surface << '\n';
+void solve(int lvl, int rotate) {
+	//cout << "====LVL : " << lvl << " :: SURFACE : " << dt[lvl][rotate] << "===\n";
 	if (lvl == n) {
 		ans = MAX(ans, sum);
-		cout << "ANS : " << ans << "\n\n";
 		return;
 	}
 
-	F(top, 6) {
+	F(new_rotate, 6) {
 		// pass whats not having same surface  / dice[lvl][surface]
-		if (surface != dice[lvl+1][dt[top][5]]) continue;
-		cout << surface << ":" << dice[lvl + 1][dt[top][5]] << " > " << dice[lvl + 1][dt[top][0]] << '\n';
+		//// ¾Æ·¡Ãş À§ & À§Ãş ¾Æ·¡
+		if (dice[lvl][rotate] == dice[lvl + 1][dt[new_rotate][5]] || lvl + 1 == n) {
 
-		int tmp = 0;
-		F(side, 5) {
-			// pass Top & Bottom
-			if (!side) continue;
 
-			// max side num
-			tmp = MAX(tmp, dice[lvl][dt[top][side]]);
-			cout << "TOP : " << top << ", SIDE : " << side << ", TMP : " << tmp << '\n';
+			int side_max = -1;
+			for (int side = 1; side < 5; ++side) {
+				side_max = MAX(side_max, dice[lvl][dt[rotate][side]]);
+				//cout << "rotate : " << rotate << ", SIDE : " << dice[lvl][dt[rotate][side]] << '\n';
+			}
+
+			sum += side_max;
+			solve(lvl + 1, new_rotate);
+			sum -= side_max;
 		}
-		sum += tmp;
-		solve(lvl + 1, dice[lvl][top]);
-		sum -= tmp;
 	}
 }
 
@@ -45,8 +43,19 @@ int main() {
 	cin >> n; F(i, n) F(j, 6) cin >> dice[i][j];
 
 	// check all surfaces
-	F(i, 6) solve(0, dice[0][i]);
+	// lvlÃş & È¸Àü È½¼ö > °¡ÀåÅ«¸é
+	F(i, 6) solve(0, i);
 	
 	cout << ans;
 	return 0;
 }
+/*
+
+5
+2 3 1 6 5 4
+3 1 2 4 6 5
+5 6 4 1 3 2
+1 3 6 2 4 5
+4 1 6 5 2 3
+
+*/
