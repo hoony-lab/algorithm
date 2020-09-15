@@ -42,9 +42,6 @@
     <ClCompile Include="boj 16236 아기상어.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="test.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="coding_test\EST codility 1.cpp">
       <Filter>소스 파일\coding_test</Filter>
     </ClCompile>
@@ -627,12 +624,6 @@
     <ClCompile Include="boj 17413 단어 뒤집기 2.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
-    <ClCompile Include="boj 12970 AB.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="boj 1561 놀이 공원.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="boj 1202 보석 도둑.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
@@ -645,7 +636,19 @@
     <ClCompile Include="boj 16437 양 구출 작전.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="boj 1561 놀이 공원.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 12970 AB.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
     <ClCompile Include="boj 1943 동전 분배.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 14676 영우는 사기꾼.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="kakao blind 2020-2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
