@@ -651,6 +651,9 @@
     <ClCompile Include="kakao blind 2020-2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="boj 3109 빵집.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="practice\abocadoTest.h">
