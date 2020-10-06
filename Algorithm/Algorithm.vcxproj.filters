@@ -585,9 +585,6 @@
     <ClCompile Include="boj 15685 드래곤 커브.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="boj 1062 가르침.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="boj 1740 거듭제곱.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
@@ -684,11 +681,17 @@
     <ClCompile Include="boj 1149 RGB거리.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
-    <ClCompile Include="boj 1114 통나무 자르기.cpp">
-      <Filter>소스 파일\solved</Filter>
-    </ClCompile>
     <ClCompile Include="test.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 1062 가르침.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 1114 통나무 자르기.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 1253 좋다.cpp">
+      <Filter>소스 파일\solved</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
