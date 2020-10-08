@@ -714,6 +714,9 @@
     <ClCompile Include="boj 15353 큰 수 A+B (2).cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
+    <ClCompile Include="boj 9205 맥주 마시면서 걸어가기.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="practice\abocadoTest.h">
