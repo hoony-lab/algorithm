@@ -700,6 +700,9 @@
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
     <ClCompile Include="boj 1002 터렛.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 1024 수열의 합.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
