@@ -22,22 +22,9 @@ vector<SHARK> shark, move_shark;
 bool check(int x, int y) {
 	return !(x < 0 || y < 0 || x >= n || y >= n);
 }
-void bfs(int x, int y) {
-	queue<P> q;
-	q.push({x, y});
-	visit[x][y] = true;
-	while (!q.empty()) {
-		int tx = q.front().x, ty = q.front().y;
-		q.pop();
 
-		F(a, 4) {
-			int nx = tx + dx[a], ny = ty + dy[a];
-			if (!check(nx, ny)) continue;
-			q.push({ nx, ny });
-			visit[nx][ny] = visit[tx][ty] + 1;
-		}
-
-	}
+void tic_toc() {
+	F(x, n) F(y, n) if (smell[x][y]) smell[x][y]--, map[x][y] = 0;
 }
 
 bool cmp(SHARK s1, SHARK s2) {
@@ -52,8 +39,59 @@ bool cmp(SHARK s1, SHARK s2) {
 		return map[x1][y1] == 0;
 }
 
-void tic_toc() {
-	F(x, n) F(y, n) if (smell[x][y]) smell[x][y]--, map[x][y] = 0;
+void move() {
+
+}
+
+void cal_move() {
+	int ssize = (int)shark.size();
+	cout << "SHARK_SIZE : " << ssize << '\n';
+
+	F(i, ssize) {
+		bool done = false;
+		int tx = shark[i].x, ty = shark[i].y, tway = shark[i].way;
+
+		vector<SHARK> possible_shark(1);
+
+		int iway = 0;
+		for (int nway : shark[i].w[tway]) {
+			int nx = tx + dx[nway], ny = ty + dx[nway];
+
+			if (!check(nx, ny) || (map[nx][ny] != 0 && map[nx][ny] != i)) continue;
+
+			// 빈 칸, 탐색 중지 (최우선 순위)
+			if (map[nx][ny] == 0) {
+				possible_shark.push_back({ shark[i].idx, nx, ny, tway, iway });
+				break;
+			}
+
+			// 자기 냄새 칸, 계속 탐색 (차선책)
+			if (map[nx][ny] == i) {
+				possible_shark.push_back({ shark[i].idx, nx, ny, tway, iway });
+			}
+
+			iway++;
+		}
+
+		// 가장 앞의 상어가 최우선 순위 상어
+		sort(possible_shark.begin(), possible_shark.end(), cmp);
+
+		// 다른칸에 이동 못했으면
+		if (possible_shark.size() == 0) {
+			shark.erase(shark.begin() + shark[i].idx);
+			continue;
+		}
+		
+	}
+
+	
+	move_shark.clear();
+	move_shark.push_back();
+	smell[nx][ny] = k + 1;
+	map[nx][ny] = i;
+	 
+	// 전체 냄새 감소
+	tic_toc();
 }
 
 void init() {
@@ -89,54 +127,10 @@ int main() {
 			cout << -1;
 			return 0;
 		}
-		int ssize = (int)shark.size();
-		cout << "SHARK_SIZE : " << ssize << '\n';
 
-		F(i, ssize) {
-			bool done = false;
-			int iway = 0;
-			int tx = shark[i].x, ty = shark[i].y, tway = shark[i].way;
-
-			vector<SHARK> possible_shark(1);
-
-			for (int nway : shark[i].w[tway]) {
-				int nx = tx + dx[nway], ny = ty + dx[nway];
-
-				if (!check(nx, ny) || (map[nx][ny] != 0  && map[nx][ny] != i)) continue;
-
-				// 빈 칸, 탐색 중지 (최우선 순위)
-				if (map[nx][ny] == 0) {
-					possible_shark.push_back({ nx, ny, tway, iway});
-					break;
-				}
-
-				// 자기 냄새 칸, 계속 탐색 (차선책)
-				if (map[nx][ny] == i) {
-					possible_shark.push_back({ i, nx, ny, tway, iway });
-				}
-
-				iway++;
-			}
-
-			// 가장 앞의 상어가 최우선 순위 상어
-			sort(possible_shark.begin(), possible_shark.end(), cmp);
-
-
-				// 이미 다른상어가 도달한 자리면 빠이
-				if (smell[nx][ny] == k + 1) break;
-				
-				done = true;
-				shark[i].x = nx, shark[i].y = ny, shark[i].way = way;
-				smell[nx][ny] = k + 1;
-				map[nx][ny] = i;
-				break;
-			// 다른칸에 이동 못했으면
-			if (!done)
-				shark.erase(shark.begin() + i);
-		}
-
-		// 전체 냄새 감소
-		tic_toc();
+		cal_move();
+		move();
+		
 
 	} while (shark.size() > 1);
 
