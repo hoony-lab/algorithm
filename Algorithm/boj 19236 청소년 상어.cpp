@@ -60,6 +60,7 @@ void move_fish() {
 			
 			// 물고기가 다른 물고기가 있는 칸으로 이동할 때는 서로의 위치를 바꾸는 방식으로 이동
 			int nidx = map[nx][ny];
+			//swap(fish[tidx], fish[nidx]);
 			fish[tidx] = fish[nidx];
 			fish[nidx] = { tidx, nway, tx, ty};
 			break;
@@ -69,9 +70,12 @@ void move_fish() {
 
 void dfs(int sum) {
 	
-	ans = max(ans, sum);
 
 	int x = shark.x, y = shark.y, way = shark.way;
+
+	//eat_fish();
+
+	move_fish();
 
 	// 최대 3칸까지 이동 가능
 	bool done = false;
@@ -85,7 +89,6 @@ void dfs(int sum) {
 		int nway = fish[map[nx][ny]].way, nidx = map[nx][ny];
 
 		// ???
-		move_fish();
 
 		// eat_fish(x, y, nx, ny);
 
@@ -100,13 +103,12 @@ void dfs(int sum) {
 	}
 	
 	// 상어가 갈 곳이 없음 ???
+	ans = max(ans, sum);
 }
 
 int main() {
 
 	init();
-	int tmp = fish[map[0][0]].idx;
-	eat_fish(0, 0, 0, 0);
 
 	dfs(tmp);
 
