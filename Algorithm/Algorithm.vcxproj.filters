@@ -733,6 +733,8 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="swea 5650 핀볼 게임.cpp">
+    </ClCompile>
+    <ClCompile Include="boj 20057 마법사 상어와 토네이도.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
