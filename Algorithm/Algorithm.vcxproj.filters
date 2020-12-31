@@ -737,6 +737,9 @@
     <ClCompile Include="boj 20057 마법사 상어와 토네이도.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
+    <ClCompile Include="A번 - 끝말잇기.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="practice\abocadoTest.h">
