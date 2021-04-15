@@ -16,11 +16,11 @@
     <Filter Include="소스 파일\solved">
       <UniqueIdentifier>{36dc14f6-8127-4d22-be4c-79340ff08424}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\coding_test">
-      <UniqueIdentifier>{2bc64cdd-9f68-45b2-9699-b87a3075ebcf}</UniqueIdentifier>
-    </Filter>
     <Filter Include="소스 파일\practice">
       <UniqueIdentifier>{7ae332ad-9d13-4d34-9bb8-ccd52f58f5f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\coding-test">
+      <UniqueIdentifier>{0b4a9964-d5cf-47a0-b1f7-f0c67819fbf5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -35,36 +35,6 @@
     </ClCompile>
     <ClCompile Include="boj 11657 타임머신.cpp">
       <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="coding_test\EST codility 1.cpp">
-      <Filter>소스 파일\coding_test</Filter>
-    </ClCompile>
-    <ClCompile Include="coding_test\EST codility 2.cpp">
-      <Filter>소스 파일\coding_test</Filter>
-    </ClCompile>
-    <ClCompile Include="coding_test\EST codility 3.cpp">
-      <Filter>소스 파일\coding_test</Filter>
-    </ClCompile>
-    <ClCompile Include="coding_test\플밍1.cpp">
-      <Filter>소스 파일\coding_test</Filter>
-    </ClCompile>
-    <ClCompile Include="coding_test\플밍2.cpp">
-      <Filter>소스 파일\coding_test</Filter>
-    </ClCompile>
-    <ClCompile Include="coding_test\플밍3.cpp">
-      <Filter>소스 파일\coding_test</Filter>
-    </ClCompile>
-    <ClCompile Include="coding_test\플밍5.cpp">
-      <Filter>소스 파일\coding_test</Filter>
-    </ClCompile>
-    <ClCompile Include="coding_test\플밍6.cpp">
-      <Filter>소스 파일\coding_test</Filter>
-    </ClCompile>
-    <ClCompile Include="coding_test\현대모비스 2.cpp">
-      <Filter>소스 파일\coding_test</Filter>
-    </ClCompile>
-    <ClCompile Include="coding_test\현대모비스 3.cpp">
-      <Filter>소스 파일\coding_test</Filter>
     </ClCompile>
     <ClCompile Include="practice\abocadoTest.cpp">
       <Filter>소스 파일\practice</Filter>
@@ -396,21 +366,6 @@
     <ClCompile Include="boj 17836 공주님을 구해라!.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
-    <ClCompile Include="코테45 4.cpp">
-      <Filter>소스 파일\coding_test</Filter>
-    </ClCompile>
-    <ClCompile Include="코테11 SE.cpp">
-      <Filter>소스 파일\coding_test</Filter>
-    </ClCompile>
-    <ClCompile Include="코테45 1.cpp">
-      <Filter>소스 파일\coding_test</Filter>
-    </ClCompile>
-    <ClCompile Include="코테45 2.cpp">
-      <Filter>소스 파일\coding_test</Filter>
-    </ClCompile>
-    <ClCompile Include="코테45 3.cpp">
-      <Filter>소스 파일\coding_test</Filter>
-    </ClCompile>
     <ClCompile Include="🆚번 - 홀수와 짝수의 대결.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
@@ -492,57 +447,6 @@
     <ClCompile Include="boj 5052 전화번호 목록.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
-    <ClCompile Include="2020 kakao blind recuritment 문자열 압축.cpp">
-      <Filter>소스 파일\coding_test</Filter>
-    </ClCompile>
-    <ClCompile Include="2019 kakao blind recruitment 길 찾기 게임.cpp">
-      <Filter>소스 파일\coding_test</Filter>
-    </ClCompile>
-    <ClCompile Include="2019 kakao blind recruitment 매칭 점수.cpp">
-      <Filter>소스 파일\coding_test</Filter>
-    </ClCompile>
-    <ClCompile Include="2019 kakao blind recruitment 무지의 먹방 라이브.cpp">
-      <Filter>소스 파일\coding_test</Filter>
-    </ClCompile>
-    <ClCompile Include="2019 kakao blind recruitment 블록 게임.cpp">
-      <Filter>소스 파일\coding_test</Filter>
-    </ClCompile>
-    <ClCompile Include="2019 kakao blind recruitment 블록 게임3.cpp">
-      <Filter>소스 파일\coding_test</Filter>
-    </ClCompile>
-    <ClCompile Include="2019 kakao blind recruitment 오픈채팅방.cpp">
-      <Filter>소스 파일\coding_test</Filter>
-    </ClCompile>
-    <ClCompile Include="2019 kakao blind recruitment 후보키.cpp">
-      <Filter>소스 파일\coding_test</Filter>
-    </ClCompile>
-    <ClCompile Include="2020 kakao blind recruitment 기사 검색.cpp">
-      <Filter>소스 파일\coding_test</Filter>
-    </ClCompile>
-    <ClCompile Include="2020 kakao blind recruitment 블록 이동하기.cpp">
-      <Filter>소스 파일\coding_test</Filter>
-    </ClCompile>
-    <ClCompile Include="2020 kakao blind recruitment 외벽 점검.cpp">
-      <Filter>소스 파일\coding_test</Filter>
-    </ClCompile>
-    <ClCompile Include="2020 kakao blind recruitment 자물쇠와 열쇠.cpp">
-      <Filter>소스 파일\coding_test</Filter>
-    </ClCompile>
-    <ClCompile Include="2020 kakao internship 1.cpp">
-      <Filter>소스 파일\coding_test</Filter>
-    </ClCompile>
-    <ClCompile Include="2020 kakao internship 2.cpp">
-      <Filter>소스 파일\coding_test</Filter>
-    </ClCompile>
-    <ClCompile Include="2020 kakao internship 3.cpp">
-      <Filter>소스 파일\coding_test</Filter>
-    </ClCompile>
-    <ClCompile Include="2020 kakao internship 4.cpp">
-      <Filter>소스 파일\coding_test</Filter>
-    </ClCompile>
-    <ClCompile Include="2020 kakao internship 5.cpp">
-      <Filter>소스 파일\coding_test</Filter>
-    </ClCompile>
     <ClCompile Include="boj 4673 셀프 넘버.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
@@ -587,9 +491,6 @@
     </ClCompile>
     <ClCompile Include="boj 17837 새로운 게임 2.cpp">
       <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="2020 kakao 신입공채 비밀지도.cpp">
-      <Filter>소스 파일\coding_test</Filter>
     </ClCompile>
     <ClCompile Include="boj 15683 감시.cpp">
       <Filter>소스 파일\solved</Filter>
@@ -723,8 +624,6 @@
     <ClCompile Include="boj 19235 모노미노도미노.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="swea 5650 핀볼 게임.cpp">
-    </ClCompile>
     <ClCompile Include="swea 5658 보물상자 비밀번호.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
@@ -739,6 +638,111 @@
     </ClCompile>
     <ClCompile Include="A번 - 끝말잇기.cpp">
       <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="swea 5650 핀볼 게임.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 20056 마법사 상어와 파이어볼.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 14889 스타트와 링크.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="coding-test\2019 kakao blind recruitment 길 찾기 게임.cpp">
+      <Filter>소스 파일\coding-test</Filter>
+    </ClCompile>
+    <ClCompile Include="coding-test\2019 kakao blind recruitment 매칭 점수.cpp">
+      <Filter>소스 파일\coding-test</Filter>
+    </ClCompile>
+    <ClCompile Include="coding-test\2019 kakao blind recruitment 무지의 먹방 라이브.cpp">
+      <Filter>소스 파일\coding-test</Filter>
+    </ClCompile>
+    <ClCompile Include="coding-test\2019 kakao blind recruitment 블록 게임.cpp">
+      <Filter>소스 파일\coding-test</Filter>
+    </ClCompile>
+    <ClCompile Include="coding-test\2019 kakao blind recruitment 블록 게임3.cpp">
+      <Filter>소스 파일\coding-test</Filter>
+    </ClCompile>
+    <ClCompile Include="coding-test\2019 kakao blind recruitment 오픈채팅방.cpp">
+      <Filter>소스 파일\coding-test</Filter>
+    </ClCompile>
+    <ClCompile Include="coding-test\2019 kakao blind recruitment 후보키.cpp">
+      <Filter>소스 파일\coding-test</Filter>
+    </ClCompile>
+    <ClCompile Include="coding-test\2020 kakao blind recruitment 기사 검색.cpp">
+      <Filter>소스 파일\coding-test</Filter>
+    </ClCompile>
+    <ClCompile Include="coding-test\2020 kakao blind recruitment 블록 이동하기.cpp">
+      <Filter>소스 파일\coding-test</Filter>
+    </ClCompile>
+    <ClCompile Include="coding-test\2020 kakao blind recruitment 외벽 점검.cpp">
+      <Filter>소스 파일\coding-test</Filter>
+    </ClCompile>
+    <ClCompile Include="coding-test\2020 kakao blind recruitment 자물쇠와 열쇠.cpp">
+      <Filter>소스 파일\coding-test</Filter>
+    </ClCompile>
+    <ClCompile Include="coding-test\2020 kakao blind recuritment 문자열 압축.cpp">
+      <Filter>소스 파일\coding-test</Filter>
+    </ClCompile>
+    <ClCompile Include="coding-test\2020 kakao internship 1.cpp">
+      <Filter>소스 파일\coding-test</Filter>
+    </ClCompile>
+    <ClCompile Include="coding-test\2020 kakao internship 2.cpp">
+      <Filter>소스 파일\coding-test</Filter>
+    </ClCompile>
+    <ClCompile Include="coding-test\2020 kakao internship 3.cpp">
+      <Filter>소스 파일\coding-test</Filter>
+    </ClCompile>
+    <ClCompile Include="coding-test\2020 kakao internship 4.cpp">
+      <Filter>소스 파일\coding-test</Filter>
+    </ClCompile>
+    <ClCompile Include="coding-test\2020 kakao internship 5.cpp">
+      <Filter>소스 파일\coding-test</Filter>
+    </ClCompile>
+    <ClCompile Include="coding-test\2020 kakao 신입공채 비밀지도.cpp">
+      <Filter>소스 파일\coding-test</Filter>
+    </ClCompile>
+    <ClCompile Include="coding-test\2020-2 nhn 수건돌리기 게임1.cpp">
+      <Filter>소스 파일\coding-test</Filter>
+    </ClCompile>
+    <ClCompile Include="coding-test\2020-2 시멘트 양 계산하기2.cpp">
+      <Filter>소스 파일\coding-test</Filter>
+    </ClCompile>
+    <ClCompile Include="coding-test\2020-2 주문표 변환하기3.cpp">
+      <Filter>소스 파일\coding-test</Filter>
+    </ClCompile>
+    <ClCompile Include="coding-test\EST codility 1.cpp">
+      <Filter>소스 파일\coding-test</Filter>
+    </ClCompile>
+    <ClCompile Include="coding-test\EST codility 2.cpp">
+      <Filter>소스 파일\coding-test</Filter>
+    </ClCompile>
+    <ClCompile Include="coding-test\EST codility 3.cpp">
+      <Filter>소스 파일\coding-test</Filter>
+    </ClCompile>
+    <ClCompile Include="coding-test\코테11 SE.cpp">
+      <Filter>소스 파일\coding-test</Filter>
+    </ClCompile>
+    <ClCompile Include="coding-test\플밍1.cpp">
+      <Filter>소스 파일\coding-test</Filter>
+    </ClCompile>
+    <ClCompile Include="coding-test\플밍2.cpp">
+      <Filter>소스 파일\coding-test</Filter>
+    </ClCompile>
+    <ClCompile Include="coding-test\플밍3.cpp">
+      <Filter>소스 파일\coding-test</Filter>
+    </ClCompile>
+    <ClCompile Include="coding-test\플밍5.cpp">
+      <Filter>소스 파일\coding-test</Filter>
+    </ClCompile>
+    <ClCompile Include="coding-test\플밍6.cpp">
+      <Filter>소스 파일\coding-test</Filter>
+    </ClCompile>
+    <ClCompile Include="coding-test\현대모비스 2.cpp">
+      <Filter>소스 파일\coding-test</Filter>
+    </ClCompile>
+    <ClCompile Include="coding-test\현대모비스 3.cpp">
+      <Filter>소스 파일\coding-test</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
