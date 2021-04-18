@@ -606,9 +606,6 @@
     <ClCompile Include="boj 10819 차이를 최대로.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
-    <ClCompile Include="boj 19237 어른 상어.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="boj 16236 아기상어.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
@@ -747,8 +744,14 @@
     <ClCompile Include="boj 19236 청소년 상어.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
-    <ClCompile Include="boj 19237 어른 상어(2).cpp">
+    <ClCompile Include="20055 컨베이어 벨트 위의 로봇.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 19237 어른 상어(2).cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 19237 어른 상어.cpp">
+      <Filter>소스 파일\solved</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
