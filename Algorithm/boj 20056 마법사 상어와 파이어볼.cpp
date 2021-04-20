@@ -17,7 +17,7 @@ struct Fireball {
 	int r, c, m, s, d;
 };
 int n, m, k, result;
-vector<Fireball> map[51][51], new_map[51][51];
+vector<Fireball> map[51][51], tmap[51][51];
 vector<Fireball> ball, new_ball;
 
 void print(vector<Fireball> m[][51]) {
@@ -36,7 +36,7 @@ void print(vector<Fireball> m[][51]) {
 	cout << '\n';
 }
 void divide() {
-	F(x, n) F(y, n) new_map[x][y].clear();
+	F(x, n) F(y, n) tmap[x][y].clear();
 	new_ball.clear();
 
 	F(x, n) F(y, n) if (map[x][y].size() >= 2) {
@@ -79,29 +79,29 @@ void divide() {
 
 			//new_map[nx][ny].push_back({ nx, ny, nm, ns, nd });
 			//new_ball.push_back({ nx, ny, nm, ns, nd });
-			new_map[x][y].push_back({ x, y, nm, ns, nd });
+			tmap[x][y].push_back({ x, y, nm, ns, nd });
 			new_ball.push_back({ x, y, nm, ns, nd });
 			cout << "push at : " << x << ", " << y << '\n';
 		}
 
 		F(x, n) F(y, n) map[x][y].clear();
-		memcpy(map, new_map, sizeof(map));
+		memcpy(map, tmap, sizeof(map));
 
 		ball.clear();
 		ball = new_ball;
 	}
 }
 void move_and_join() {
-	F(x, n) F(y, n) new_map[x][y].clear();
+	F(x, n) F(y, n) tmap[x][y].clear();
 
 	F(i, (int) ball.size()) {
 		int nx = (1000 * n + ball[i].r + ball[i].s * dx[ball[i].d]) % n;
 		int ny = (1000 * n + ball[i].c + ball[i].s * dy[ball[i].d]) % n;
 
 		ball[i].r = nx, ball[i].c = ny;
-		new_map[nx][ny].push_back(ball[i]);
+		tmap[nx][ny].push_back(ball[i]);
 	}
-	memcpy(map, new_map, sizeof(map));
+	memcpy(map, tmap, sizeof(map));
 }
 
 void solve() {
