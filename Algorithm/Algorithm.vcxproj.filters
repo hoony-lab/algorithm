@@ -624,9 +624,6 @@
     <ClCompile Include="swea 2105 디저트 카페.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
-    <ClCompile Include="swea 5644 무선 충전.cpp">
-      <Filter>소스 파일\solved</Filter>
-    </ClCompile>
     <ClCompile Include="boj 20057 마법사 상어와 토네이도.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
@@ -744,14 +741,35 @@
     <ClCompile Include="boj 19236 청소년 상어.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
-    <ClCompile Include="20055 컨베이어 벨트 위의 로봇.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="boj 19237 어른 상어(2).cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
     <ClCompile Include="boj 19237 어른 상어.cpp">
       <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 20055 컨베이어 벨트 위의 로봇.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 1238 파티.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 1981 배열에서 이동.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 11728 배열 합치기.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="swea 5644 무선 충전.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 1261 알고스팟.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 1759 암호 만들기.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 20058 마법사 상어와 파이어스톰.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
