@@ -769,7 +769,7 @@
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
     <ClCompile Include="boj 20058 마법사 상어와 파이어스톰.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\solved</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
