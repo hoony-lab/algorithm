@@ -1,25 +1,37 @@
 #include <iostream>
+#define F(i, n) for(int i = 0 ; i < n ; ++i)
 #define ll long long
-ll map[2 ^ 15][2 ^ 15];
+#define MAX (1<<15)+4
+ll n, r, c, ans;
+
+void Z(int y, int x, int size)
+{
+    if (y == r && x == c) {
+        std::cout << ans << '\n';
+        return;
+    }
+
+    // r,c가 현재 사분면에 존재한다면
+    if (r < y + size && r >= y && c < x + size && c >= x) {
+        // 1사분면 탐색
+        Z(y, x, size / 2);
+        // 2사분면 탐색
+        Z(y, x + size / 2, size / 2);
+        // 3사분면 탐색
+        Z(y + size / 2, x, size / 2);
+        // 4사분면 탐색
+        Z(y + size / 2, x + size / 2, size / 2);
+    }
+    else {
+        ans += size * size;
+    }
+}
+
 int main() {
-	ll n, r, c, ans = 0, count = 0;
 	std::cin >> n >> r >> c;
 
-	
-	map[0][0] = count++;
-	map[0][1] = count++;
-	map[1][0] = count++;
-	map[1][1] = count++;
+	Z(0, 0, (1 << n));
 
-	map[0][2] = count++;
-	map[0][3] = count++;
-	map[1][2] = count++;
-	map[1][3] = count++;
-
-	map[2][0] = count++;
-	map[2][1] = count++;
-
-	std::cout << ans;
 	return 0;
 }
 
