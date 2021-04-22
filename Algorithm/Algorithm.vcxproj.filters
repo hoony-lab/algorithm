@@ -342,9 +342,6 @@
     <ClCompile Include="boj 1676 팩토리얼 0의 개수.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
-    <ClCompile Include="boj 1074 Z.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="boj 15829 Hashing.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
@@ -772,6 +769,12 @@
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
     <ClCompile Include="boj 14442 벽 부수고 이동하기 2.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 1074 Z.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 1753 최단경로.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
   </ItemGroup>
