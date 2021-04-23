@@ -450,9 +450,6 @@
     <ClCompile Include="boj 11723 집합.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
-    <ClCompile Include="boj 1927 최소 힙.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="boj 3107 IPv6.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
@@ -775,6 +772,12 @@
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
     <ClCompile Include="boj 1753 최단경로.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 1927 최소 힙.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 18840 좌표 압축.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
   </ItemGroup>
