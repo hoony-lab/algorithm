@@ -1,111 +1,185 @@
-// 20201017 1830 - 2030
-#include<iostream>
+// https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5VwAr6APYDFAWu
+// 20210424 1306 - 1410
+#include <iostream>
 #include <vector>
 #include <queue>
-#include <memory.h>
+#include <cstring>
+#include <functional>
 #include <algorithm>
-#include <cstdio>
-#include <set>
-using namespace std;
 #pragma warning (disable : 4996)
-#define F(i, n) for (int i = 0 ; i < n ; ++i)
-#define MAX 20
-struct P { int x, y; };
-int dx[] = { 1, 1, -1, -1 };
-int dy[] = { 1, -1, -1, 1 };
-int n, ans;
-int map[MAX][MAX], eat[101], visit[MAX][MAX];
-set<int> st;
-void print_eat(int e[]) {
-	cout << "eat list : ";
-	F(i, 101) if (e[i]) cout << i << ", ";
-	cout << '\n';
-}
-void print(int m[][MAX]) {
+#define F(i, n) for(int i = 0 ; i < n ; ++i)
+using namespace std;
+int dx[] = { 1,1,-1,-1 };
+int dy[] = { 1,-1,-1,1 };
+
+int T, n, ans, map[20][20], visit[20][20], eat[101];
+void print() {
 	F(x, n) {
-		F(y, n) {
-			cout << m[x][y] << " ";
-		}cout << '\n';
-	}cout << "\n\n";
+		F(y, n) { cout << map[x][y] << ' '; }cout << '\n';
+	}
 }
 bool check(int x, int y) {
 	return !(x < 0 || y < 0 || x >= n || y >= n);
 }
+void dfs(int sx, int sy, int tx, int ty, int dir, int v[][20], int e[], int count) {
 
-
-
-void dfs(int m[][MAX], int sx, int sy, int x, int y, int e[], int cnt, int d) {
-
-	//cout << " V : " << x << ", " << y << " : cnt " << cnt << " , d : " << d << '\n';
-
-	if (sx == x && sy == y && d == 3) {
-		ans = max(ans, cnt);
-		//cout << "  DONE : " << cnt << " >> " << ans << '\n';
+	// 한바퀴 다돌아서 정상종료
+	if ((sx == tx && sy == ty) && v[tx][ty]) {
+		ans = max(ans, count);
+		//cout << "\t\tdone : " << tx << ", " << ty << " << " << s.size() << " : " << dir << '\n';
 		return;
 	}
+	// 같은 디저트 번호 비정상종료
+	if (eat[map[tx][ty]]) return;
 
-	/* 방향 : 직진 , 회전 */
+	v[tx][ty] = true;
+	eat[map[tx][ty]] = true;
+	//cout << "\tvisit : " << tx << ", " << ty << '\n';
+
 	F(a, 2) {
-		if (d + a == 4) continue;
-		int nx = x + dx[d + a], ny = y + dy[d + a];
+		int nd = dir + a, nx = tx + dx[nd], ny = ty + dy[nd];
+		if (!check(nx, ny) || nd == 4 || (visit[nx][ny] && !(sx == nx && sy == ny))) continue;
 
-		//cout << "  V : " << nx << ", " << ny << " , d+a : " << d + a  << '\n';
-		if (check(nx, ny) && !visit[nx][ny] && !e[m[nx][ny]]) {
-			//cout << "   V : " << nx << ", " << ny << " , d+a : " << d + a << '\n';
-
-			visit[nx][ny] = true;
-			e[m[nx][ny]] = true;
-
-			dfs(m, sx, sy, nx, ny, e, cnt + 1, d + a);
-
-			e[m[nx][ny]] = false;
-			visit[nx][ny] = false;
-		}
-		else if (sx == nx && sy == ny) {
-			dfs(m, sx, sy, nx, ny, e, cnt, d + a);
-		}
+		dfs(sx, sy, nx, ny, nd, v, e, count + 1);
 	}
+	//cout << "\tbye : " << tx << ", " << ty << '\n';
+	v[tx][ty] = false;
+	eat[map[tx][ty]] = false;
 }
+int main() {
 
-int main(int argc, char** argv)
-{
-	int test_case;
-	int T;
-	/*
-	   아래의 freopen 함수는 input.txt 를 read only 형식으로 연 후,
-	   앞으로 표준 입력(키보드) 대신 input.txt 파일로부터 읽어오겠다는 의미의 코드입니다.
-	   //여러분이 작성한 코드를 테스트 할 때, 편의를 위해서 input.txt에 입력을 저장한 후,
-	   freopen 함수를 이용하면 이후 cin 을 수행할 때 표준 입력 대신 파일로부터 입력을 받아올 수 있습니다.
-	   따라서 테스트를 수행할 때에는 아래 주석을 지우고 이 함수를 사용하셔도 좋습니다.
-	   freopen 함수를 사용하기 위해서는 #include <cstdio>, 혹은 #include <stdio.h> 가 필요합니다.
-	   단, 채점을 위해 코드를 제출하실 때에는 반드시 freopen 함수를 지우거나 주석 처리 하셔야 합니다.
-	*/
 	freopen("input.txt", "r", stdin);
 	cin >> T;
-	/*
-	   여러 개의 테스트 케이스가 주어지므로, 각각을 처리합니다.
-	*/
-	for (test_case = 1; test_case <= T; ++test_case)
-	{
+
+	F(test_case, T) {
 		memset(map, 0, sizeof(map));
-		ans = 0;
+		memset(visit, 0, sizeof(visit));
+		memset(eat, 0, sizeof(eat));
+		ans = -1;
+
 		cin >> n;
 		F(x, n) F(y, n) cin >> map[x][y];
-
-		F(x, n) F(y, n) {
-			//cout << "START /// " << x << ", " << y << '\n';
-			memset(eat, 0, sizeof(eat));
-
-			eat[map[x][y]] = true;
-			dfs(map, x, y, x, y, eat, 1, 0);
-			eat[map[x][y]] = false;
+			
+		F(x, n - 1) F(y, n - 1) {
+			//cout << "start : " << x << ", " << y << '\n';
+			dfs(x, y, x, y, 0, visit, eat, 0);
 		}
 
-		if (!ans) ans = -1;
-		cout << "#" << test_case << " " << ans << '\n';
+		if(ans == 0) cout << "#" << test_case + 1 << " " << "-1" << '\n';
+		else cout << "#" << test_case + 1 << " " << ans << '\n';
 	}
-	return 0;//정상종료시 반드시 0을 리턴해야합니다.
+	return 0;
 }
+
+
+//// 20201017 1830 - 2030
+//#include<iostream>
+//#include <vector>
+//#include <queue>
+//#include <memory.h>
+//#include <algorithm>
+//#include <cstdio>
+//#include <set>
+//using namespace std;
+//#pragma warning (disable : 4996)
+//#define F(i, n) for (int i = 0 ; i < n ; ++i)
+//#define MAX 20
+//struct P { int x, y; };
+//int dx[] = { 1, 1, -1, -1 };
+//int dy[] = { 1, -1, -1, 1 };
+//int n, ans;
+//int map[MAX][MAX], eat[101], visit[MAX][MAX];
+//set<int> st;
+//void print_eat(int e[]) {
+//	cout << "eat list : ";
+//	F(i, 101) if (e[i]) cout << i << ", ";
+//	cout << '\n';
+//}
+//void print(int m[][MAX]) {
+//	F(x, n) {
+//		F(y, n) {
+//			cout << m[x][y] << " ";
+//		}cout << '\n';
+//	}cout << "\n\n";
+//}
+//bool check(int x, int y) {
+//	return !(x < 0 || y < 0 || x >= n || y >= n);
+//}
+//
+//
+//
+//void dfs(int m[][MAX], int sx, int sy, int x, int y, int e[], int cnt, int d) {
+//
+//	//cout << " V : " << x << ", " << y << " : cnt " << cnt << " , d : " << d << '\n';
+//
+//	if (sx == x && sy == y && d == 3) {
+//		ans = max(ans, cnt);
+//		//cout << "  DONE : " << cnt << " >> " << ans << '\n';
+//		return;
+//	}
+//
+//	/* 방향 : 직진 , 회전 */
+//	F(a, 2) {
+//		if (d + a == 4) continue;
+//		int nx = x + dx[d + a], ny = y + dy[d + a];
+//
+//		//cout << "  V : " << nx << ", " << ny << " , d+a : " << d + a  << '\n';
+//		if (check(nx, ny) && !visit[nx][ny] && !e[m[nx][ny]]) {
+//			//cout << "   V : " << nx << ", " << ny << " , d+a : " << d + a << '\n';
+//
+//			visit[nx][ny] = true;
+//			e[m[nx][ny]] = true;
+//
+//			dfs(m, sx, sy, nx, ny, e, cnt + 1, d + a);
+//
+//			e[m[nx][ny]] = false;
+//			visit[nx][ny] = false;
+//		}
+//		else if (sx == nx && sy == ny) {
+//			dfs(m, sx, sy, nx, ny, e, cnt, d + a);
+//		}
+//	}
+//}
+//
+//int main(int argc, char** argv)
+//{
+//	int test_case;
+//	int T;
+//	/*
+//	   아래의 freopen 함수는 input.txt 를 read only 형식으로 연 후,
+//	   앞으로 표준 입력(키보드) 대신 input.txt 파일로부터 읽어오겠다는 의미의 코드입니다.
+//	   //여러분이 작성한 코드를 테스트 할 때, 편의를 위해서 input.txt에 입력을 저장한 후,
+//	   freopen 함수를 이용하면 이후 cin 을 수행할 때 표준 입력 대신 파일로부터 입력을 받아올 수 있습니다.
+//	   따라서 테스트를 수행할 때에는 아래 주석을 지우고 이 함수를 사용하셔도 좋습니다.
+//	   freopen 함수를 사용하기 위해서는 #include <cstdio>, 혹은 #include <stdio.h> 가 필요합니다.
+//	   단, 채점을 위해 코드를 제출하실 때에는 반드시 freopen 함수를 지우거나 주석 처리 하셔야 합니다.
+//	*/
+//	freopen("input.txt", "r", stdin);
+//	cin >> T;
+//	/*
+//	   여러 개의 테스트 케이스가 주어지므로, 각각을 처리합니다.
+//	*/
+//	for (test_case = 1; test_case <= T; ++test_case)
+//	{
+//		memset(map, 0, sizeof(map));
+//		ans = 0;
+//		cin >> n;
+//		F(x, n) F(y, n) cin >> map[x][y];
+//
+//		F(x, n) F(y, n) {
+//			//cout << "START /// " << x << ", " << y << '\n';
+//			memset(eat, 0, sizeof(eat));
+//
+//			eat[map[x][y]] = true;
+//			dfs(map, x, y, x, y, eat, 1, 0);
+//			eat[map[x][y]] = false;
+//		}
+//
+//		if (!ans) ans = -1;
+//		cout << "#" << test_case << " " << ans << '\n';
+//	}
+//	return 0;//정상종료시 반드시 0을 리턴해야합니다.
+//}
 
 
 //// https://swexpertacademy.com/main/solvingProblem/solvingProblem.do
