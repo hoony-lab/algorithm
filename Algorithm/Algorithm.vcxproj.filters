@@ -798,6 +798,9 @@
     <ClCompile Include="boj 18809 Gaaaaaaaaaarden.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="boj 2003 수들의 합 2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="practice\abocadoTest.h">
