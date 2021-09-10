@@ -363,12 +363,6 @@
     <ClCompile Include="boj 17836 공주님을 구해라!.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
-    <ClCompile Include="🆚번 - 홀수와 짝수의 대결.cpp">
-      <Filter>소스 파일\solved</Filter>
-    </ClCompile>
-    <ClCompile Include="👏번 - 0초 후에 제출할 수 있습니다.cpp">
-      <Filter>소스 파일\solved</Filter>
-    </ClCompile>
     <ClCompile Include="boj 17471 게리맨더링.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
@@ -621,9 +615,6 @@
     <ClCompile Include="boj 20057 마법사 상어와 토네이도.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
-    <ClCompile Include="A번 - 끝말잇기.cpp">
-      <Filter>소스 파일\solved</Filter>
-    </ClCompile>
     <ClCompile Include="swea 5650 핀볼 게임.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -801,14 +792,20 @@
     <ClCompile Include="boj 2003 수들의 합 2.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
-    <ClCompile Include="2020 카카오 인턴쉽 보석 쇼핑.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="boj 13023 ABCDE.cpp">
       <Filter>소스 파일\solved</Filter>
     </ClCompile>
     <ClCompile Include="boj 12100 2048 (Easy).cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 👏번 - 0초 후에 제출할 수 있습니다.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj 🆚번 - 홀수와 짝수의 대결.cpp">
+      <Filter>소스 파일\solved</Filter>
+    </ClCompile>
+    <ClCompile Include="boj A번 - 끝말잇기.cpp">
+      <Filter>소스 파일\solved</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
