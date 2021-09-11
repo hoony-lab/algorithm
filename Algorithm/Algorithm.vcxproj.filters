@@ -834,6 +834,15 @@
     <ClCompile Include="coding-test\2021 kakao blind recruitment 3.cpp">
       <Filter>소스 파일\coding-test</Filter>
     </ClCompile>
+    <ClCompile Include="coding-test\2021 SW 개발 신입 LINER 공개채용 4.cpp">
+      <Filter>소스 파일\coding-test</Filter>
+    </ClCompile>
+    <ClCompile Include="coding-test\2021-2 kakao 7.cpp">
+      <Filter>소스 파일\coding-test</Filter>
+    </ClCompile>
+    <ClCompile Include="coding-test\2021-2 kakao 1.cpp">
+      <Filter>소스 파일\coding-test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="practice\abocadoTest.h">
